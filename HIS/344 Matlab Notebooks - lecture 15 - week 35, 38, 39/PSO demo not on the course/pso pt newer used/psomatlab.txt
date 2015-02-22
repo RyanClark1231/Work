@@ -1,0 +1,60 @@
+psomatlab
+
+Particle swarm toolbox for MATLAB 
+
+http://code.google.com/p/psomatlab/
+
+
+
+
+Introduction¶
+
+Particle swarm optimization is a derivative-free global optimum search algorithm based on the collective intelligence of a large group of intercommunicating entities. The individual particles are simple and primitive, knowing only their own current locations and fitness values, their personal best locations, and the swarm's best location. Each particle continually adjusts its trajectory based this information, moving towards the global optimum with each iteration. The swarm as a whole displays a remarkable level of coherence and coordination despite the simplicity of its individual particles. The coordinated behavior of the swarm has been compared with that of a flock of birds or a school of fish. 
+
+Ease of Use¶
+
+If you are already using the Genetic Algorithm (GA) included with MATLAB's Global Optimization Toolbox, then this Particle Swarm Optimization (PSO) algorithm will save you a great deal of time. It can be called from the MATLAB command line using the same syntax as the GA, with some additional options specific to PSO. This will allow a high degree of code re-usability between the PSO toolbox and the GA toolbox. Certain GA-specific parameters such as cross-over and mutation functions will obviously not be applicable to the PSO algorithm. However, many of the commonly used options and constraints for the Genetic Algorithm Toolbox may be used interchangeably with PSO since they are both iterative population-based solvers. See >> help pso (from the ./psopt directory) for more details. 
+
+Features¶
+•Modular and customizable 
+•Ability to solve problems consisting of binary variables. Type >> help psobinary (from the psopt directory) for details. 
+•Bounded, linear, and nonlinear constraints 
+•Support for vectorized fitness functions 
+•Algorithm parameters may be adjusted using an options structure similar to existing MATLAB optimization solvers 
+•Custom plots may be written using same interface as the Genetic Algorithm plotting functions 
+•Another optimization solver may be called as a "hybrid function" to refine the results after the particle swarm terminates 
+
+A demo function (psodemo.m) is included, with a small library of test functions. To run the demo, from the psopt directory, call >> psodemo with no inputs or outputs. 
+
+New features and bug fixes will continue to be released until this is made redundant by the release of an official MATLAB PSO toolbox. Bug reports and feature requests are welcome. 
+
+Acknowledgements¶
+
+Special thanks to the following people for contributing code and bugfixes: 
+•Ben 
+•Michael Johnston of the IRIS toolbox 
+•J. Oliver of Brigham Young University 
+•Ziqiang (Kevin) Chen 
+
+--------------------------------------------------------------------------------
+
+
+Bibliography¶
+•J Kennedy, RC Eberhart, YH Shi. Swarm Intelligence. Academic Press, 2001. 
+•Particle Swarm Optimization. http://en.wikipedia.org/wiki/Particle_swarm_optimization 
+•RE Perez, K Behdinan. Particle swarm approach for structural design optimization. Computers and Structures 85 (2007) 1579–1588. 
+•M Mikki, AA Kishk. Particle Swarm Optimization: A Physics-Based Approach. Morgan & Claypool, 2008. 
+
+--------------------------------------------------------------------------------
+
+Addendum A¶
+
+Nonlinear inequality constraints in the form c(x) = 0 and nonlinear equality constraints of the form ceq(x) = 0 have now been implemented. The newly added 'penalize' constraint boundary enforcement method is now default. It works with all type of constraints. The older 'soft' or 'absorb' style boundaries may still be used, however they are only useful in problems with only nonlinear inequality constraints of the form c(x) = 0. Calculations may be faster in some situations with 'soft' boundaries since infeasible solutions are not evaluated at all and simply assigned a fitness score of infinity. 
+
+Addendum B¶
+
+See the following document for the proper syntax for defining nonlinear constraint functions: http://www.mathworks.com/help/optim/ug/writing-constraints.html#brhkghv-16. To see a demonstration of nonlinear inequality constraints using a quadrifolium overlaid on Rosenbrock's function, run psodemo and choose 'nonlinearconstrdemo' as the test function. 
+
+Addendum C¶
+
+The 'penalize' style constraint enforcement method is described in Perez and Behdinan's 2007 paper (see Bibliography above). It has the advantage of being able to more quickly and efficiently handle nonlinear constraints (both equality and inequality types) than the earlier-implemented methods in this toolbox. However, it was recently implemented in this PSO toolbox as of May 2013. I had previously attempted to implement such a constraint handling method, however users were reporting that the algorithm was still returning non-feasible solutions. This problem should be fixed by now. Nevertheless, if you are solving a constrained problem, please validate that any results you obtain are actually in the feasible design space before accepting them for any mission-critical applications. 

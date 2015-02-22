@@ -1,0 +1,10 @@
+in the command window type>> 
+
+ant_system_tsp(@Qatar100a, 50000);
+
+or 
+
+ant_system_tsp(@Qatar100b, 50000);
+
+
+for comparison with GA TSP 100

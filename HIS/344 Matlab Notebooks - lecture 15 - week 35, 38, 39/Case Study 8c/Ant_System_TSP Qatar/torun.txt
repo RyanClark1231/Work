@@ -1,0 +1,22 @@
+in the command window type>> ant_system_tsp(@Qatar, 50000);
+
+
+
+
+
+Ant System TSP Solver
+by Johannes 
+ 
+Updated 16 Apr 2013
+
+A demo of an Ant System algorithm solving classical Traveling Salesman Problems.
+http://www.mathworks.com/matlabcentral/fileexchange/33448-ant-system-tsp-solver
+
+
+Description A demo of an Ant System algorithm solving classical Traveling Salesman Problems.
+To run, type:
+
+ant_system_tsp(@Qatar, 50000)
+
+The code should be pretty self-explanatory.
+ 
