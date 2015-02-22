@@ -23,7 +23,8 @@ echo on;
 
 pause
 
-p=[0 0 1 1;0 1 0 1]
+p=[0 0 1 1;
+   0 1 0 1]
 
 
 
@@ -44,7 +45,7 @@ plotpv(p,t,v);
 % numbers in the range [0, 1]. The perceptron's threshold is set to zero.
 pause
 
-net=newp([0 1;0 1],1);
+net=newp([1 1;1 1],1);
 w=(rands(2))';
 b=[0];
 net.IW{1,1}=w;

@@ -23,7 +23,8 @@ echo on;
 % Hit any key to define four 2-element input vectors denoted by "p". 
 pause 
 
-p=[0 0 1 1; 0 1 0 1]
+p=[0 0 1 1;
+   0 1 0 1]
 %inputs are 00 01 10 11
 % Hit any key to define four 1-element target vectors denoted by "t". 
 pause 
@@ -41,11 +42,11 @@ plotpv(p,t,v);
 % numbers in the range [0, 1]. The perceptron's threshold is set to zero.
 pause
 %create a new perceptron (RxQ matrix of representative input vectors, SxQ matrix of representative target vectors)
-net=newp([0 1;0 1],[0 1]);
+net=newp([0 1;0 1],1);
 w=(rands(2))';
-
+b=[0];
 net.IW{1,1}=w;
-net.b{1}=0;
+net.b{1}=b;
 %Plot input target vectors
 plotpv(p,t,v);
 %Plot line
