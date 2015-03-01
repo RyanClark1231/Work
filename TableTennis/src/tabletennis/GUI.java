@@ -1088,6 +1088,8 @@ public class GUI extends javax.swing.JFrame {
       doubleAWin.setText("0");
       hWinTotal.setText("0");
       aWinTotal.setText("0");
+      matches.getMatch(hTeamField.getText(), aTeamField.getText()).setAwayTeamWin(0);
+      matches.getMatch(hTeamField.getText(), aTeamField.getText()).setHomeTeamWin(0);
 
       matches.getMatch(hTeamField.getText(), aTeamField.getText()).getASingleSet(hPlayer1.getText(), aPlayer1.getText()).enterSetScore(Integer.valueOf(set11ahpts.getText()), Integer.valueOf(set11aapts.getText()), Integer.valueOf(set11bhpts.getText()), Integer.valueOf(set11bapts.getText()), Integer.valueOf(set11chpts.getText()), Integer.valueOf(set11capts.getText()));
       matches.getMatch(hTeamField.getText(), aTeamField.getText()).getASingleSet(hPlayer1.getText(), aPlayer2.getText()).enterSetScore(Integer.valueOf(set12ahpts.getText()), Integer.valueOf(set12aapts.getText()), Integer.valueOf(set12bhpts.getText()), Integer.valueOf(set12bapts.getText()), Integer.valueOf(set12chpts.getText()), Integer.valueOf(set12capts.getText()));
@@ -1140,7 +1142,7 @@ public class GUI extends javax.swing.JFrame {
       Set teams = reg.getAllTeams().entrySet();
       Iterator it = teams.iterator();
       Map.Entry<String, Team> teamMap;
-
+      message = "";
       while (it.hasNext()) {
         teamMap = (Map.Entry<String, Team>) it.next();
         message += teamMap.getValue().toString();

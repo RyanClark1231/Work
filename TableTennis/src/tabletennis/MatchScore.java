@@ -92,7 +92,7 @@ public class MatchScore {
 
   public Boolean calculateHomeTeamScore() {
     Boolean hWin = false;
-
+     
     if (doubleS.calculateHomeWin()) {
       hWin = true;
       homeTeamWin++;
@@ -118,6 +118,14 @@ public class MatchScore {
       set.submitSetScore(set.getHomePlayer(), set.getAwayPlayer(), set.getGames());
     }
     doubleS.submitSetScore(doubleS.getHomePlayer(), doubleS.getAwayPlayer(), doubleS.getGames());
+  }
+
+  public void setHomeTeamWin(int homeTeamWin) {
+    this.homeTeamWin = homeTeamWin;
+  }
+
+  public void setAwayTeamWin(int awayTeamWin) {
+    this.awayTeamWin = awayTeamWin;
   }
 
 }
