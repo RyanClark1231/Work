@@ -52,6 +52,7 @@ fprintf(1,'Hit any key to generate a population of %.0f chromosomes.\n',nind);
 pause
 
 chrom=round(rand(nind,ngenes))
+%Generate a nind by ngenes matrix of 0's a 1's
 
 disp('Hit any key to obtain decoded integers from the chromosome strings.')
 pause
@@ -66,6 +67,7 @@ ave(1)=mean(ObjV);
 disp('Hit any key to display initial locations of the chromosomes on the objective function.')
 pause
 
+%Find where each chromosome lies on the fitness function
 figure('name','Chromosome locations on the objective function');
 fplot(ObjFun,[xmin,xmax])
 hold;
@@ -82,7 +84,7 @@ pause
 
 for i=1:ngener,
    
-   % Fitness evaluation
+   % Fitness evaluation, set of original fitness
    fitness=ObjV;
    if min(ObjV)<0
       fitness=fitness-min(ObjV);
