@@ -7,9 +7,9 @@
 %   Demonstrated to A.N. Other (student id 9999999) 26-01-14 
 %
 %   My comments: 
-%               As the exclusive-OR problem is not linearly seperable and
+%               As the exclusive-OR problem is not linearly seperable it
 %               therefore cannot be solved by a single layer perceptron
-%               using only two dimension I had to change this program so
+%               using only two dimension this meatn that I had to change this program so
 %               that it created a plane in 3D space so that the 0's and 1's
 %               could be seperated
 %
