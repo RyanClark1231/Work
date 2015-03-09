@@ -1,5 +1,33 @@
 function GA_1
+%
+%
+%   This program is a simple example of a genetic algorithm, to start with
+%   a fitness function is defined (15*x-x^x) which is used to calculate the
+%   relative fitness of chromosomes. Certain parameters are then defined
+%   such as the initial number of chromosomes in the population, the number
+%   of genes they posses, the crossover probability which defines the
+%   probability that two mates will perform a crossover and the mutation
+%   probability which defines the probability of a gene in a chromosome
+%   flipping
+%
+%   You can then generate an initial popilation using these parameters and
+%   decode their genes the decoded genes are then applied to the fitness
+%   function to give you the chromosomes' fitness, from these fitnesses you
+%   can define a roulette wheel which assignes each chromosome a sector of
+%   the wheel relative to their fitness (a higher fitness chromosome is
+%   given a larger sector) you can then randomly select two chromosomes to
+%   mate from the roulette wheel and apply crossover and mutation to them,
+%   this is repeated until a new population is founded this process is
+%   repeated for 20 generations
+%
+%   Although this program will always repeat for 20 generations it is very
+%   likely to find the best solution before this due to the small number of
+%   values the chromosomes can take (each chromosome only has 4 genes,
+%   therefore there are only 15 different values that the chromosome can
+%   take) this means that not all the generations are always needed.
+%
 
+ 
 disp('=============================================================')
 disp('Genetic algorithms: the fitness function of a single variable')
 disp('=============================================================')

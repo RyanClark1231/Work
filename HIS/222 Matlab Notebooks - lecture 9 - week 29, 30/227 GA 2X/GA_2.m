@@ -1,5 +1,31 @@
 function GA_2
 
+%
+%
+%       This program is similar to the previous although it has a much more
+%       complex fitness function with two parameters rather than one and
+%       much more genes per chromosome, this means that there is a wider
+%       variety of values that the chromosomes can take up as well as
+%       increasing the chance that mutation will happen. Due to the small
+%       chromosome population and large number of genes it is less likely
+%       that any chromosomes will be initialised close to the maximum
+%       values of the fitness function meaning that more generations may be
+%       needed before the maximum is found, to improve the performance of
+%       this genetic algorithm a larger population could be used as this
+%       would increase the chance that a chromosome will be initialised
+%       with a value close to the fitness function and therefore there will
+%       a larger pool of fit chromosomes to choose mates from. 
+%       
+%       In this function there is a small 'local optimum' that could cause
+%       the algorithm to get stuck if the population is very small, the is
+%       a small amount of genes and or the muation proability is too low,
+%       by increasing the mutation variable you can decrease the chance
+%       that the algorithm will get stuck in the local variable
+%
+%       
+%
+%
+
 disp('=========================================================')
 disp('Genetic algorithms: the fitness function of two variables')
 disp('=========================================================')

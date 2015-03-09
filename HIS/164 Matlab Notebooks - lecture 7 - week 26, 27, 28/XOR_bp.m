@@ -2,7 +2,20 @@
 % ==================
 % Filename: XOR_bp.m
 % ==================
-
+%
+%       This program solves XOR by using brack-propogation, by using this
+%       it can source the errors in the results and adjust the relative
+%       weights accordingly until there are no longer any errors. To do
+%       this it will first calculate the outputs as with the previous
+%       single-layer perceptron, from this you can calculate the weight
+%       correction for the ouput-layer by using the error-gradient, you can
+%       then use the weight correction to update the weights for the output
+%       layer. This processes is repeated for the hidden layer also this
+%       processes is then repeated until the error is sufficiently small,
+%       in this program it is 0.001 or until the maximum number of epochs
+%       have been reached.
+%
+%
 rand('seed',8353);
 
 echo on;

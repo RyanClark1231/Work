@@ -1,7 +1,14 @@
 % ==========================
 % Filename: Perceptron_XOR.m
 % ==========================
-
+%
+%       This program demonstrates that you cannot seperate the XOR into 
+%       two definitive regions in two dimensions using a single layer
+%       perceptron and therefore is not linearlly seperable, to be able to
+%       solve this problem you would have to add another dimension which
+%       allow you to draw a plane between the two regions concerned.
+%
+%
 echo on;
 %
 %
