@@ -220,7 +220,7 @@ public class GUI extends javax.swing.JFrame {
 
         manageItemsMenuItem.setText("Edit");
 
-        addItemMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
+        addItemMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         addItemMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_item.png"))); // NOI18N
         addItemMenuItem.setText("Add Item");
         addItemMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -230,7 +230,7 @@ public class GUI extends javax.swing.JFrame {
         });
         manageItemsMenuItem.add(addItemMenuItem);
 
-        removeItemMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        removeItemMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         removeItemMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/remove_item.png"))); // NOI18N
         removeItemMenuItem.setText("Remove Item");
         removeItemMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -240,7 +240,8 @@ public class GUI extends javax.swing.JFrame {
         });
         manageItemsMenuItem.add(removeItemMenuItem);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/manage_items.png"))); // NOI18N
         jMenuItem1.setText("Manage Items");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,7 +250,7 @@ public class GUI extends javax.swing.JFrame {
         });
         manageItemsMenuItem.add(jMenuItem1);
 
-        addRepoMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        addRepoMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         addRepoMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_repo.png"))); // NOI18N
         addRepoMenuItem.setText("Add Repository");
         addRepoMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -259,7 +260,7 @@ public class GUI extends javax.swing.JFrame {
         });
         manageItemsMenuItem.add(addRepoMenuItem);
 
-        removeRepoMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        removeRepoMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         removeRepoMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/remove_repo.png"))); // NOI18N
         removeRepoMenuItem.setText("Remove Repository");
         removeRepoMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -269,7 +270,8 @@ public class GUI extends javax.swing.JFrame {
         });
         manageItemsMenuItem.add(removeRepoMenuItem);
 
-        manageReposMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
+        manageReposMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        manageReposMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/manage_repos.png"))); // NOI18N
         manageReposMenuItem.setText("Manage Repositories");
         manageReposMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,7 +280,8 @@ public class GUI extends javax.swing.JFrame {
         });
         manageItemsMenuItem.add(manageReposMenuItem);
 
-        addItemSetMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
+        addItemSetMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
+        addItemSetMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_item_set.png"))); // NOI18N
         addItemSetMenuItem.setText("Add Item Set");
         addItemSetMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -287,7 +290,8 @@ public class GUI extends javax.swing.JFrame {
         });
         manageItemsMenuItem.add(addItemSetMenuItem);
 
-        removeItemSetMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        removeItemSetMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        removeItemSetMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/remove_item_set.png"))); // NOI18N
         removeItemSetMenuItem.setText("Remove Item Set");
         removeItemSetMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,7 +300,8 @@ public class GUI extends javax.swing.JFrame {
         });
         manageItemsMenuItem.add(removeItemSetMenuItem);
 
-        manageItemSetsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        manageItemSetsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        manageItemSetsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/manage_item_sets.png"))); // NOI18N
         manageItemSetsMenuItem.setText("Manage Item Sets");
         manageItemSetsMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -557,54 +562,6 @@ public class GUI extends javax.swing.JFrame {
           System.exit(0);
       }
   }//GEN-LAST:event_quitMenuItemActionPerformed
-
-  private void addItemMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemMenuItemActionPerformed
-      //popup with field to add an item with
-      double price = 0;
-      long id = 0;
-      String desc = "";
-      boolean idUsed = false;
-
-      NumberFormat numberFormat = NumberFormat.getIntegerInstance();
-      NumberFormat priceFormat = NumberFormat.getNumberInstance();
-      priceFormat.setMaximumFractionDigits(2);
-      priceFormat.setMinimumFractionDigits(2);
-
-      JFormattedTextField descField = new JFormattedTextField();
-      JFormattedTextField idField = new JFormattedTextField(numberFormat);
-      JFormattedTextField priceField = new JFormattedTextField(priceFormat);
-
-      JPanel panel = new JPanel(new GridLayout(0, 1));
-      panel.add(new JLabel("Description: "));
-      panel.add(descField);
-      panel.add(new JLabel("ID: "));
-      panel.add(idField);
-      panel.add(new JLabel("Price (£): "));
-      panel.add(priceField);
-      int result = JOptionPane.showConfirmDialog(null, panel, "Add a new item", OK_CANCEL_OPTION, PLAIN_MESSAGE);
-      if (result == OK_OPTION) {
-          if (priceField.getValue().getClass().getName().equals("java.lang.Long")) {
-              price = (long) priceField.getValue();
-          } else {
-              price = (double) priceField.getValue();
-          }
-          for (Item item : itemMan.getItems()) {
-              if ((long) idField.getValue() == item.getId()) {
-                  idUsed = true;
-                  JOptionPane.showMessageDialog(this, "An item with this ID already exists", "Already exists", ERROR_MESSAGE);
-                  break;
-              }
-          }
-          if (!idUsed) {
-              itemMan.addItem((long) idField.getValue(), descField.getText(), price);
-              itemMan.sortItems();
-              hasChanged = true;
-              refreshMenuItemActionPerformed(evt);
-          }
-
-      }
-
-  }//GEN-LAST:event_addItemMenuItemActionPerformed
 
   private void removeItemMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeItemMenuItemActionPerformed
       String[] items = new String[(int) itemMan.size()];
@@ -1290,6 +1247,53 @@ public class GUI extends javax.swing.JFrame {
     private void windowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_windowClosing
         quitMenuItemActionPerformed(null);
     }//GEN-LAST:event_windowClosing
+
+    private void addItemMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemMenuItemActionPerformed
+        //popup with field to add an item with
+        double price = 0;
+        long id = 0;
+        String desc = "";
+        boolean idUsed = false;
+
+        NumberFormat numberFormat = NumberFormat.getIntegerInstance();
+        NumberFormat priceFormat = NumberFormat.getNumberInstance();
+        priceFormat.setMaximumFractionDigits(2);
+        priceFormat.setMinimumFractionDigits(2);
+
+        JFormattedTextField descField = new JFormattedTextField();
+        JFormattedTextField idField = new JFormattedTextField(numberFormat);
+        JFormattedTextField priceField = new JFormattedTextField(priceFormat);
+
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Description: "));
+        panel.add(descField);
+        panel.add(new JLabel("ID: "));
+        panel.add(idField);
+        panel.add(new JLabel("Price (£): "));
+        panel.add(priceField);
+        int result = JOptionPane.showConfirmDialog(null, panel, "Add a new item", OK_CANCEL_OPTION, PLAIN_MESSAGE);
+        if (result == OK_OPTION) {
+            if (priceField.getValue().getClass().getName().equals("java.lang.Long")) {
+                price = (long) priceField.getValue();
+            } else {
+                price = (double) priceField.getValue();
+            }
+            for (Item item : itemMan.getItems()) {
+                if ((long) idField.getValue() == item.getId()) {
+                    idUsed = true;
+                    JOptionPane.showMessageDialog(this, "An item with this ID already exists", "Already exists", ERROR_MESSAGE);
+                    break;
+                }
+            }
+            if (!idUsed) {
+                itemMan.addItem((long) idField.getValue(), descField.getText(), price);
+                itemMan.sortItems();
+                hasChanged = true;
+                refreshMenuItemActionPerformed(evt);
+            }
+
+        }
+    }//GEN-LAST:event_addItemMenuItemActionPerformed
 
     private void addItemSetManager(javax.swing.JTree tree) {
         if (tree.getSelectionPath().getPathCount() == 1) {
