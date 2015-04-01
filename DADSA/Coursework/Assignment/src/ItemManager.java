@@ -86,7 +86,7 @@ public class ItemManager {
         items.sort();
     }
 
-    public void findAnother(Item find, long set) {
+    public String findAnother(Item find, long set) {
         DoublyLinkedList<Item> found = new DoublyLinkedList<>();
         String type = getType(find.getDescription());
         for (Item item : items) {
@@ -111,6 +111,7 @@ public class ItemManager {
                 break;
             }
         }
+        return first.element.getId() + ": " + first.element.getDescription();
     }
 
     public String getType(String desc) {

@@ -23,6 +23,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.CANCEL_OPTION;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import static javax.swing.JOptionPane.OK_CANCEL_OPTION;
 import static javax.swing.JOptionPane.OK_OPTION;
 import static javax.swing.JOptionPane.PLAIN_MESSAGE;
@@ -50,77 +51,77 @@ import static javax.swing.tree.TreeSelectionModel.SINGLE_TREE_SELECTION;
  */
 public class GUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form GUI
-     */
-    public GUI() {
-        initComponents();
+  /**
+   * Creates new form GUI
+   */
+  public GUI() {
+    initComponents();
 
-        //set filter for file chooser
-        choose.setFileFilter(filter);
-        choose.setAcceptAllFileFilterUsed(false);
-        //setup tree
-        rootTree = new javax.swing.JTree();
-        rootNode = new javax.swing.tree.DefaultMutableTreeNode("root");
-        rootNode.add(repoNode);
-        allNode.add(itemsNode);
-        allNode.add(itemSetNode);
-        rootNode.add(allNode);
-        rootTree.setModel(new javax.swing.tree.DefaultTreeModel(rootNode));
-        rootTree.setRootVisible(false);
-        jScrollPane2.setViewportView(rootTree);
+    //set filter for file chooser
+    choose.setFileFilter(filter);
+    choose.setAcceptAllFileFilterUsed(false);
+    //setup tree
+    rootTree = new javax.swing.JTree();
+    rootNode = new javax.swing.tree.DefaultMutableTreeNode("root");
+    rootNode.add(repoNode);
+    allNode.add(itemsNode);
+    allNode.add(itemSetNode);
+    rootNode.add(allNode);
+    rootTree.setModel(new javax.swing.tree.DefaultTreeModel(rootNode));
+    rootTree.setRootVisible(false);
+    jScrollPane2.setViewportView(rootTree);
 
-        popup = new JPopupMenu();
-        JMenuItem addItemPopupMenuItem = new JMenuItem("Add item");
-        addItemPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addItemMenuItemActionPerformed(evt);
-            }
-        });
-        JMenuItem removeItemPopupMenuItem = new JMenuItem("Remove item");
-        removeItemPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeItemMenuItemActionPerformed(evt);
-            }
-        });
-        JMenuItem addRepoPopupMenuItem = new JMenuItem("Add repository");
-        addRepoPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addRepoMenuItemActionPerformed(evt);
-            }
-        });
-        JMenuItem removeRepoPopupMenuItem = new JMenuItem("Remove repository");
-        removeRepoPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeRepoMenuItemActionPerformed(evt);
-            }
-        });
-        JMenuItem manageItemSetPopupMenuItem = new JMenuItem("Add item set");
-        manageItemSetPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageItemSetsMenuItemActionPerformed(evt);
-            }
-        });
+    popup = new JPopupMenu();
+    JMenuItem addItemPopupMenuItem = new JMenuItem("Add item");
+    addItemPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        addItemMenuItemActionPerformed(evt);
+      }
+    });
+    JMenuItem removeItemPopupMenuItem = new JMenuItem("Remove item");
+    removeItemPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        removeItemMenuItemActionPerformed(evt);
+      }
+    });
+    JMenuItem addRepoPopupMenuItem = new JMenuItem("Add repository");
+    addRepoPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        addRepoMenuItemActionPerformed(evt);
+      }
+    });
+    JMenuItem removeRepoPopupMenuItem = new JMenuItem("Remove repository");
+    removeRepoPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        removeRepoMenuItemActionPerformed(evt);
+      }
+    });
+    JMenuItem manageItemSetPopupMenuItem = new JMenuItem("Add item set");
+    manageItemSetPopupMenuItem.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        manageItemSetsMenuItemActionPerformed(evt);
+      }
+    });
 
-        popup.add(addItemPopupMenuItem);
-        //popup.add(new JSeparator());
-        popup.add(removeItemPopupMenuItem);
-        //popup.add(new JSeparator());
-        popup.add(addRepoPopupMenuItem);
-        //popup.add(new JSeparator());
-        popup.add(removeRepoPopupMenuItem);
-        //popup.add(new JSeparator());
-        popup.add(manageItemSetPopupMenuItem);
+    popup.add(addItemPopupMenuItem);
+    //popup.add(new JSeparator());
+    popup.add(removeItemPopupMenuItem);
+    //popup.add(new JSeparator());
+    popup.add(addRepoPopupMenuItem);
+    //popup.add(new JSeparator());
+    popup.add(removeRepoPopupMenuItem);
+    //popup.add(new JSeparator());
+    popup.add(manageItemSetPopupMenuItem);
 
-        rootTree.addMouseListener(popupListener);
-    }
+    rootTree.addMouseListener(popupListener);
+  }
 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
+  /**
+   * This method is called from within the constructor to initialize the form.
+   * WARNING: Do NOT modify this code. The content of this method is always
+   * regenerated by the Form Editor.
+   */
+  @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -346,1190 +347,1205 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
   private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
-      for (int i = 0; i < 3; i++) {
-          try {
-              if (i == 2) {
-                  fileWriter = new FileWriter(loadFile.getAbsolutePath().replace(".csv", " Sets.csv"));
-                  fileWriter.append("Item No.,Description,Price(£),Number of items,Item 1,Item 2,Item 3,Item 4,Item 5, Repo 1, Repo 2, Repo 3, Repo 4, Repo 5\n");
-                  for (ItemSet set : itemMan.getItemSets()) {
-                      fileWriter.append(set.getId() + "," + set.getDescription() + "," + set.getPrice() + "," + set.getnItems());
-                      for (Item item : set.getItems()) {
-                          fileWriter.append("," + item.getId());
-                      }
-                      fileWriter.append(",");
-                      for (Repo repo : repoMan.getRepos()) {
-                          for (ItemSet repoSet : repo.getItemSets()) {
-                              if (repoSet.getId() == set.getId()) {
-                                  fileWriter.append(repo.getId() + ",");
-                                  fileWriter.flush();
-                                  break;
-                              }
-                          }
-                      }
-                      fileWriter.append("\n");
-                      fileWriter.flush();
-                  }
-              } else if (i == 1) {
-                  fileWriter = new FileWriter(loadFile);
-                  fileWriter.append("Item No.,Description,Price (£),Repo 1, Repo 2, Repo 3, Repo 4, Repo 5\n");
-                  for (Item item : itemMan.getItems()) {
-                      fileWriter.append(item.getId() + "," + item.getDescription() + "," + item.getPrice() + ",");
-                      for (Repo repo : repoMan.getRepos()) {
-                          for (Item repoItem : repo.getItems()) {
-                              if (repoItem.getId() == item.getId()) {
-                                  fileWriter.append(repo.getId() + ",");
-                                  fileWriter.flush();
-                                  break;
-                              }
-                          }
-                      }
-                      fileWriter.append("\n");
-                      fileWriter.flush();
-                  }
-              } else {
-                  fileWriter = new FileWriter(loadFile.getAbsolutePath().replace(".csv", " Repos.csv"));
-                  fileWriter.append("Repo Name,ID\n");
-                  for (Repo repo : repoMan.getRepos()) {
-                      fileWriter.append(repo.getDescription() + "," + repo.getId() + "\n");
-                      fileWriter.flush();
-                  }
+    for (int i = 0; i < 3; i++) {
+      try {
+        if (i == 2) {
+          fileWriter = new FileWriter(loadFile.getAbsolutePath().replace(".csv", " Sets.csv"));
+          fileWriter.append("Item No.,Description,Price(£),Number of items,Item 1,Item 2,Item 3,Item 4,Item 5, Repo 1, Repo 2, Repo 3, Repo 4, Repo 5\n");
+          for (ItemSet set : itemMan.getItemSets()) {
+            fileWriter.append(set.getId() + "," + set.getDescription() + "," + set.getPrice() + "," + set.getnItems());
+            for (Item item : set.getItems()) {
+              fileWriter.append("," + item.getId());
+            }
+            fileWriter.append(",");
+            for (Repo repo : repoMan.getRepos()) {
+              for (ItemSet repoSet : repo.getItemSets()) {
+                if (repoSet.getId() == set.getId()) {
+                  fileWriter.append(repo.getId() + ",");
+                  fileWriter.flush();
+                  break;
+                }
               }
-              fileWriter.close();
-          } catch (Exception ex) {
-
+            }
+            fileWriter.append("\n");
+            fileWriter.flush();
           }
-          hasChanged = false;
+        } else if (i == 1) {
+          fileWriter = new FileWriter(loadFile);
+          fileWriter.append("Item No.,Description,Price (£),Repo 1, Repo 2, Repo 3, Repo 4, Repo 5\n");
+          for (Item item : itemMan.getItems()) {
+            fileWriter.append(item.getId() + "," + item.getDescription() + "," + item.getPrice() + ",");
+            for (Repo repo : repoMan.getRepos()) {
+              for (Item repoItem : repo.getItems()) {
+                if (repoItem.getId() == item.getId()) {
+                  fileWriter.append(repo.getId() + ",");
+                  fileWriter.flush();
+                  break;
+                }
+              }
+            }
+            fileWriter.append("\n");
+            fileWriter.flush();
+          }
+        } else {
+          fileWriter = new FileWriter(loadFile.getAbsolutePath().replace(".csv", " Repos.csv"));
+          fileWriter.append("Repo Name,ID\n");
+          for (Repo repo : repoMan.getRepos()) {
+            fileWriter.append(repo.getDescription() + "," + repo.getId() + "\n");
+            fileWriter.flush();
+          }
+        }
+        fileWriter.close();
+      } catch (Exception ex) {
+
       }
+      hasChanged = false;
+    }
   }//GEN-LAST:event_saveMenuItemActionPerformed
 
   private void loadMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadMenuItemActionPerformed
-      choose.setApproveButtonText("Open");
-      choose.setDialogTitle("Open");
-      if (hasChanged && savePopup() == CANCEL_OPTION); else {
+    choose.setApproveButtonText("Open");
+    choose.setDialogTitle("Open");
+    if (hasChanged && savePopup() == CANCEL_OPTION); else {
 
-          if (choose.showOpenDialog(choose) == JFileChooser.CANCEL_OPTION); else {
-              repoMan = new RepoManager();
-              itemMan = new ItemManager();
-              loadFile = choose.getSelectedFile();
+      if (choose.showOpenDialog(choose) == JFileChooser.CANCEL_OPTION); else {
+        repoMan = new RepoManager();
+        itemMan = new ItemManager();
+        loadFile = choose.getSelectedFile();
 
-              for (int i = 0; i < 3; i++) {
-                  try {
-                      if (i == 2) {
-                          fileReader = new BufferedReader(new FileReader(loadFile.getAbsolutePath().replace(".csv", " Sets.csv")));
-                          fileReader.readLine();
-                          while ((nextLine = fileReader.readLine()) != null) {
-                              setsLine.add(nextLine.split(","));
-                              //Item No.,Description,Price(£),Number of items,Item 1,Item 2,Item 3,Item 4,Item 5
-                              itemMan.addItemSet(Long.valueOf(setsLine.get(0)[0]), Double.valueOf(setsLine.get(0)[2]), setsLine.get(0)[1]);
-                              int j;
-                              for (j = 0; j < Long.valueOf(setsLine.get(0)[3]); j++) {
-                                  itemMan.getItemSet(Long.valueOf(setsLine.get(0)[0])).addItem(itemMan.getItem(Long.valueOf(setsLine.get(0)[4 + j])));
-                              }
-                              for (int k = 4 + j; k < setsLine.get(0).length; k++) {
-                                  repoMan.getRepos().get(Long.valueOf(setsLine.get(0)[k])).addSet(itemMan.getItemSet(Long.valueOf(setsLine.get(0)[0])));
-                              }
-                              setsLine.clear();
-                          }
-                      } else if (i == 1) {
-                          fileReader = new BufferedReader(new FileReader(loadFile));
-                          fileReader.readLine();
-                          while ((nextLine = fileReader.readLine()) != null) {
-                              dataLine.add(nextLine.split(","));
-                              itemMan.addItem(Long.valueOf(dataLine.get(0)[0]), dataLine.get(0)[1], Double.valueOf(dataLine.get(0)[2]));
-                              if (dataLine.get(0).length > 3) {
-                                  for (int j = 3; j < dataLine.get(0).length; j++) {
-                                      repoMan.getRepos().get(Long.valueOf(dataLine.get(0)[j])).addItem(itemMan.getItem(Long.valueOf(dataLine.get(0)[0])));
-                                  }
-                              }
-                              dataLine.clear();
-                          }
-                      } else {
-                          fileReader = new BufferedReader(new FileReader(loadFile.getAbsolutePath().replace(".csv", " Repos.csv")));
-                          fileReader.readLine();
-                          while ((nextLine = fileReader.readLine()) != null) {
-                              repoLine.add(nextLine.split(","));
-                              repoMan.addRepo(repoLine.get(0)[0], Long.valueOf(repoLine.get(0)[1]));
-                              repoLine.clear();
-                          }
-                      }
-
-                      fileReader.close();
-                  } catch (Exception ex) {
-                      System.out.println(ex);
-                  }
+        for (int i = 0; i < 3; i++) {
+          try {
+            if (i == 2) {
+              fileReader = new BufferedReader(new FileReader(loadFile.getAbsolutePath().replace(".csv", " Sets.csv")));
+              fileReader.readLine();
+              while ((nextLine = fileReader.readLine()) != null) {
+                setsLine.add(nextLine.split(","));
+                //Item No.,Description,Price(£),Number of items,Item 1,Item 2,Item 3,Item 4,Item 5
+                itemMan.addItemSet(Long.valueOf(setsLine.get(0)[0]), Double.valueOf(setsLine.get(0)[2]), setsLine.get(0)[1]);
+                int j;
+                for (j = 0; j < Long.valueOf(setsLine.get(0)[3]); j++) {
+                  itemMan.getItemSet(Long.valueOf(setsLine.get(0)[0])).addItem(itemMan.getItem(Long.valueOf(setsLine.get(0)[4 + j])));
+                }
+                for (int k = 4 + j; k < setsLine.get(0).length; k++) {
+                  repoMan.getRepos().get(Long.valueOf(setsLine.get(0)[k])).addSet(itemMan.getItemSet(Long.valueOf(setsLine.get(0)[0])));
+                }
+                setsLine.clear();
               }
-              hasChanged = false;
-              refreshMenuItemActionPerformed(evt);
+            } else if (i == 1) {
+              fileReader = new BufferedReader(new FileReader(loadFile));
+              fileReader.readLine();
+              while ((nextLine = fileReader.readLine()) != null) {
+                dataLine.add(nextLine.split(","));
+                itemMan.addItem(Long.valueOf(dataLine.get(0)[0]), dataLine.get(0)[1], Double.valueOf(dataLine.get(0)[2]));
+                if (dataLine.get(0).length > 3) {
+                  for (int j = 3; j < dataLine.get(0).length; j++) {
+                    repoMan.getRepos().get(Long.valueOf(dataLine.get(0)[j])).addItem(itemMan.getItem(Long.valueOf(dataLine.get(0)[0])));
+                  }
+                }
+                dataLine.clear();
+              }
+            } else {
+              fileReader = new BufferedReader(new FileReader(loadFile.getAbsolutePath().replace(".csv", " Repos.csv")));
+              fileReader.readLine();
+              while ((nextLine = fileReader.readLine()) != null) {
+                repoLine.add(nextLine.split(","));
+                repoMan.addRepo(repoLine.get(0)[0], Long.valueOf(repoLine.get(0)[1]));
+                repoLine.clear();
+              }
+            }
+
+            fileReader.close();
+          } catch (Exception ex) {
+            System.out.println(ex);
           }
+        }
+        hasChanged = false;
+        refreshMenuItemActionPerformed(evt);
       }
+    }
   }//GEN-LAST:event_loadMenuItemActionPerformed
 
   private void refreshMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshMenuItemActionPerformed
-      rootTree = new javax.swing.JTree();
-      rootNode = new javax.swing.tree.DefaultMutableTreeNode("root");
-      allNode = new javax.swing.tree.DefaultMutableTreeNode("All");
-      repoNode = new javax.swing.tree.DefaultMutableTreeNode("Repositories (" + repoMan.getRepos().size() + ")");
-      itemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + itemMan.getItems().size() + ")");
-      itemSetNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets (" + itemMan.getItemSets().size() + ")");
+    rootTree = new javax.swing.JTree();
+    rootNode = new javax.swing.tree.DefaultMutableTreeNode("root");
+    allNode = new javax.swing.tree.DefaultMutableTreeNode("All");
+    repoNode = new javax.swing.tree.DefaultMutableTreeNode("Repositories (" + repoMan.getRepos().size() + ")");
+    itemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + itemMan.getItems().size() + ")");
+    itemSetNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets (" + itemMan.getItemSets().size() + ")");
 
-      if (sortRepo) {
-          for (Repo repos : repoMan.getRepos()) {
-              if (repos.getItems().isEmpty()); else {
-                  repos.getItems().sort();
-              }
-          }
+    if (sortRepo) {
+      for (Repo repos : repoMan.getRepos()) {
+        if (repos.getItems().isEmpty()); else {
+          repos.getItems().sort();
+        }
       }
-      //Repo items and item sets
-      for (Repo repo : repoMan.getRepos()) {
-          javax.swing.tree.DefaultMutableTreeNode repoNameNode = new javax.swing.tree.DefaultMutableTreeNode(repo.getDescription());
-          javax.swing.tree.DefaultMutableTreeNode repoIdNode = new javax.swing.tree.DefaultMutableTreeNode(repo.getId());
-          javax.swing.tree.DefaultMutableTreeNode repoItemSetNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets (" + repo.getItemSets().size() + ")");
-          javax.swing.tree.DefaultMutableTreeNode repoItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + repo.getItems().size() + ")");
-          for (ItemSet set : repo.getItemSets()) {
-              javax.swing.tree.DefaultMutableTreeNode setNode = new javax.swing.tree.DefaultMutableTreeNode(set.getDescription());
-              javax.swing.tree.DefaultMutableTreeNode setPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + set.getPrice());
-              javax.swing.tree.DefaultMutableTreeNode setIdNode = new javax.swing.tree.DefaultMutableTreeNode(set.getId());
-              javax.swing.tree.DefaultMutableTreeNode setItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + set.getItems().size() + ")");
-              for (Item item : set.getItems()) {
-                  javax.swing.tree.DefaultMutableTreeNode setItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
-                  javax.swing.tree.DefaultMutableTreeNode itemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
-                  javax.swing.tree.DefaultMutableTreeNode itemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
-                  setItemNode.add(itemIdNode);
-                  setItemNode.add(itemPriceNode);
-                  setItemsNode.add(setItemNode);
-              }
-              setNode.add(setIdNode);
-              setNode.add(setPriceNode);
-              setNode.add(setItemsNode);
-              repoItemSetNode.add(setNode);
-          }
-          for (Item item : repo.getItems()) {
-              javax.swing.tree.DefaultMutableTreeNode repoItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
-              javax.swing.tree.DefaultMutableTreeNode repoItemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
-              javax.swing.tree.DefaultMutableTreeNode repoItemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
-              repoItemNode.add(repoItemIdNode);
-              repoItemNode.add(repoItemPriceNode);
-              repoItemsNode.add(repoItemNode);
-          }
-          repoNameNode.add(repoIdNode);
-          repoNameNode.add(repoItemSetNode);
-          repoNameNode.add(repoItemsNode);
-          repoNode.add(repoNameNode);
-      }
-      //All items
-      for (Item item : itemMan.getItems()) {
-          javax.swing.tree.DefaultMutableTreeNode itemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
+    }
+    //Repo items and item sets
+    for (Repo repo : repoMan.getRepos()) {
+      javax.swing.tree.DefaultMutableTreeNode repoNameNode = new javax.swing.tree.DefaultMutableTreeNode(repo.getDescription());
+      javax.swing.tree.DefaultMutableTreeNode repoIdNode = new javax.swing.tree.DefaultMutableTreeNode(repo.getId());
+      javax.swing.tree.DefaultMutableTreeNode repoItemSetNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets (" + repo.getItemSets().size() + ")");
+      javax.swing.tree.DefaultMutableTreeNode repoItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + repo.getItems().size() + ")");
+      for (ItemSet set : repo.getItemSets()) {
+        javax.swing.tree.DefaultMutableTreeNode setNode = new javax.swing.tree.DefaultMutableTreeNode(set.getDescription());
+        javax.swing.tree.DefaultMutableTreeNode setPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + set.getPrice());
+        javax.swing.tree.DefaultMutableTreeNode setIdNode = new javax.swing.tree.DefaultMutableTreeNode(set.getId());
+        javax.swing.tree.DefaultMutableTreeNode setItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + set.getItems().size() + ")");
+        for (Item item : set.getItems()) {
+          javax.swing.tree.DefaultMutableTreeNode setItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
           javax.swing.tree.DefaultMutableTreeNode itemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
           javax.swing.tree.DefaultMutableTreeNode itemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
-          itemNode.add(itemIdNode);
-          itemNode.add(itemPriceNode);
-          itemsNode.add(itemNode);
+          setItemNode.add(itemIdNode);
+          setItemNode.add(itemPriceNode);
+          setItemsNode.add(setItemNode);
+        }
+        setNode.add(setIdNode);
+        setNode.add(setPriceNode);
+        setNode.add(setItemsNode);
+        repoItemSetNode.add(setNode);
       }
-      //All Item sets
-      for (ItemSet set : itemMan.getItemSets()) {
-          javax.swing.tree.DefaultMutableTreeNode setNode = new javax.swing.tree.DefaultMutableTreeNode(set.getDescription());
-          javax.swing.tree.DefaultMutableTreeNode setPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + set.getPrice());
-          javax.swing.tree.DefaultMutableTreeNode setIdNode = new javax.swing.tree.DefaultMutableTreeNode(set.getId());
-          javax.swing.tree.DefaultMutableTreeNode setItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + set.getItems().size() + ")");
-          for (Item item : set.getItems()) {
-              javax.swing.tree.DefaultMutableTreeNode setItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
-              javax.swing.tree.DefaultMutableTreeNode itemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
-              javax.swing.tree.DefaultMutableTreeNode itemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
-              setItemNode.add(itemIdNode);
-              setItemNode.add(itemPriceNode);
-              setItemsNode.add(setItemNode);
-          }
-          setNode.add(setIdNode);
-          setNode.add(setPriceNode);
-          setNode.add(setItemsNode);
-          itemSetNode.add(setNode);
+      for (Item item : repo.getItems()) {
+        javax.swing.tree.DefaultMutableTreeNode repoItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
+        javax.swing.tree.DefaultMutableTreeNode repoItemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
+        javax.swing.tree.DefaultMutableTreeNode repoItemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
+        repoItemNode.add(repoItemIdNode);
+        repoItemNode.add(repoItemPriceNode);
+        repoItemsNode.add(repoItemNode);
       }
+      repoNameNode.add(repoIdNode);
+      repoNameNode.add(repoItemSetNode);
+      repoNameNode.add(repoItemsNode);
+      repoNode.add(repoNameNode);
+    }
+    //All items
+    for (Item item : itemMan.getItems()) {
+      javax.swing.tree.DefaultMutableTreeNode itemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
+      javax.swing.tree.DefaultMutableTreeNode itemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
+      javax.swing.tree.DefaultMutableTreeNode itemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
+      itemNode.add(itemIdNode);
+      itemNode.add(itemPriceNode);
+      itemsNode.add(itemNode);
+    }
+    //All Item sets
+    for (ItemSet set : itemMan.getItemSets()) {
+      javax.swing.tree.DefaultMutableTreeNode setNode = new javax.swing.tree.DefaultMutableTreeNode(set.getDescription());
+      javax.swing.tree.DefaultMutableTreeNode setPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + set.getPrice());
+      javax.swing.tree.DefaultMutableTreeNode setIdNode = new javax.swing.tree.DefaultMutableTreeNode(set.getId());
+      javax.swing.tree.DefaultMutableTreeNode setItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + set.getItems().size() + ")");
+      for (Item item : set.getItems()) {
+        javax.swing.tree.DefaultMutableTreeNode setItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
+        javax.swing.tree.DefaultMutableTreeNode itemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
+        javax.swing.tree.DefaultMutableTreeNode itemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
+        setItemNode.add(itemIdNode);
+        setItemNode.add(itemPriceNode);
+        setItemsNode.add(setItemNode);
+      }
+      setNode.add(setIdNode);
+      setNode.add(setPriceNode);
+      setNode.add(setItemsNode);
+      itemSetNode.add(setNode);
+    }
 
-      rootNode.add(repoNode);
-      allNode.add(itemsNode);
-      allNode.add(itemSetNode);
-      rootNode.add(allNode);
+    rootNode.add(repoNode);
+    allNode.add(itemsNode);
+    allNode.add(itemSetNode);
+    rootNode.add(allNode);
 
-      rootTree.setModel(new javax.swing.tree.DefaultTreeModel(rootNode));
-      rootTree.setRootVisible(false);
-      jScrollPane2.setViewportView(rootTree);
+    rootTree.setModel(new javax.swing.tree.DefaultTreeModel(rootNode));
+    rootTree.setRootVisible(false);
+    jScrollPane2.setViewportView(rootTree);
 
-      rootTree.addMouseListener(popupListener);
+    rootTree.addMouseListener(popupListener);
   }//GEN-LAST:event_refreshMenuItemActionPerformed
 
   private void quitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitMenuItemActionPerformed
-      if (hasChanged && savePopup() == CANCEL_OPTION); else {
-          System.exit(0);
-      }
+    if (hasChanged && savePopup() == CANCEL_OPTION); else {
+      System.exit(0);
+    }
   }//GEN-LAST:event_quitMenuItemActionPerformed
 
   private void removeItemMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeItemMenuItemActionPerformed
-      String[] items = new String[(int) itemMan.size()];
-      int i = 0;
-      for (Item item : itemMan.getItems()) {
-          items[i] = item.getId() + ": " + item.getDescription() + " £" + item.getPrice();
-          i++;
-      }
-      itemRemoveList = new JList();
-      itemRemoveList.setListData(items);
+    String[] items = new String[(int) itemMan.size()];
+    int i = 0;
+    for (Item item : itemMan.getItems()) {
+      items[i] = item.getId() + ": " + item.getDescription() + " £" + item.getPrice();
+      i++;
+    }
+    itemRemoveList = new JList();
+    itemRemoveList.setListData(items);
 
-      JTextArea text = new JTextArea();
-      JPanel panel = new JPanel(new GridLayout(0, 1));
+    JTextArea text = new JTextArea();
+    JPanel panel = new JPanel(new GridLayout(0, 1));
 
-      JScrollPane pane = new JScrollPane(itemRemoveList);
-      panel.setPreferredSize(new Dimension(500, 500));
+    JScrollPane pane = new JScrollPane(itemRemoveList);
+    panel.setPreferredSize(new Dimension(500, 500));
 
-      panel.add(pane);
-      int result = JOptionPane.showConfirmDialog(null, panel, "Select items to remove", OK_CANCEL_OPTION, PLAIN_MESSAGE);
-      if (result == OK_OPTION) {
-          List list = itemRemoveList.getSelectedValuesList();
-          for (Object item : list) {
-              int index = item.toString().indexOf(":");
-              char[] dst = new char[index];
-              item.toString().getChars(0, index, dst, 0);
-              String id = String.valueOf(dst);
+    panel.add(pane);
+    int result = JOptionPane.showConfirmDialog(null, panel, "Select item to remove", OK_CANCEL_OPTION, PLAIN_MESSAGE);
+    if (result == OK_OPTION) {
+      List list = itemRemoveList.getSelectedValuesList();
+      for (Object item : list) {
+        int index = item.toString().indexOf(":");
+        char[] dst = new char[index];
+        item.toString().getChars(0, index, dst, 0);
+        String id = String.valueOf(dst);
 
-              for (ItemSet set : itemMan.getItemSets()) {
-                  if (set.containsItem(Long.valueOf(id))) {
-                      if (replaceItemsRadioButton.isSelected()) {
-                          itemMan.findAnother(itemMan.getItem(Long.valueOf(id)), set.getId());
-                      }
-                      set.removeItem(Long.valueOf(id));
-                  }
-              }
-              for (Repo repo : repoMan.getRepos()) {
-                  if (repo.containsItem(Long.valueOf(id))) {
-                      repo.removeItem(Long.valueOf(id));
-                  }
-              }
-              itemMan.removeItem(Long.valueOf(id));
-              hasChanged = true;
+        for (ItemSet set : itemMan.getItemSets()) {
+          if (set.containsItem(Long.valueOf(id))) {
+            if (replaceItemsRadioButton.isSelected()) {
+              JOptionPane.showMessageDialog(manageItemsRootPanel, "The item will be replaced with: " + itemMan.findAnother(itemMan.getItem(Long.valueOf(id)), set.getId()), "The item will be replaced", INFORMATION_MESSAGE);
+            }
+            set.removeItem(Long.valueOf(id));
           }
-          refreshMenuItemActionPerformed(evt);
+        }
+        String repos = "";
+        for (Repo repo : repoMan.getRepos()) {
+          if (repo.containsItem(Long.valueOf(id))) {
+            repos += repo.getDescription();
+            repo.removeItem(Long.valueOf(id));
+          }
+          repos += "\n";
+        }
+        if (!repos.isEmpty()) {
+          JOptionPane.showMessageDialog(itemRemoveList, "The item was removed from the following repos:\n" + repos, "Item was removed", INFORMATION_MESSAGE);
+        }
+        itemMan.removeItem(Long.valueOf(id));
+        hasChanged = true;
       }
+      refreshMenuItemActionPerformed(evt);
+    }
   }//GEN-LAST:event_removeItemMenuItemActionPerformed
 
   private void addRepoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRepoMenuItemActionPerformed
-      String name = "";
-      boolean nameUsed = false, idUsed = false;
-      NumberFormat id = NumberFormat.getIntegerInstance();
-      JFormattedTextField nameField = new JFormattedTextField();
-      JFormattedTextField idField = new JFormattedTextField(id);
+    String name = "";
+    boolean nameUsed = false, idUsed = false;
+    NumberFormat id = NumberFormat.getIntegerInstance();
+    JFormattedTextField nameField = new JFormattedTextField();
+    JFormattedTextField idField = new JFormattedTextField(id);
 
-      JPanel panel = new JPanel(new GridLayout(0, 1));
-      panel.add(new JLabel("ID: "));
-      panel.add(idField);
-      panel.add(new JLabel("Name: "));
-      panel.add(nameField);
+    JPanel panel = new JPanel(new GridLayout(0, 1));
+    panel.add(new JLabel("ID: "));
+    panel.add(idField);
+    panel.add(new JLabel("Name: "));
+    panel.add(nameField);
 
-      int result = JOptionPane.showConfirmDialog(null, panel, "Add a new repository", OK_CANCEL_OPTION, PLAIN_MESSAGE);
-      if (result == OK_OPTION) {
-          for (Repo repo : repoMan.getRepos()) {
-              if (nameField.getText().equalsIgnoreCase(repo.getDescription()) && nameUsed == false) {
-                  nameUsed = true;
-              }
-              if ((long) idField.getValue() == repo.getId() && idUsed == false) {
-                  idUsed = true;
-              }
-          }
-          if (nameUsed && idUsed) {
-              JOptionPane.showMessageDialog(null, "A repository with this name and ID already exists", "This repo already exists", ERROR_MESSAGE);
-          } else if (nameUsed && !idUsed) {
-              JOptionPane.showMessageDialog(null, "A repository with this name already exists", "This repo already exists", ERROR_MESSAGE);
-          } else if (!nameUsed && idUsed) {
-              JOptionPane.showMessageDialog(null, "A repository with this ID already exists", "This repo already exists", ERROR_MESSAGE);
-          } else if (!nameUsed && !idUsed) {
-              repoMan.addRepo(nameField.getText(), (long) idField.getValue());
-              hasChanged = true;
-              refreshMenuItemActionPerformed(evt);
-          }
+    int result = JOptionPane.showConfirmDialog(null, panel, "Add a new repository", OK_CANCEL_OPTION, PLAIN_MESSAGE);
+    if (result == OK_OPTION) {
+      for (Repo repo : repoMan.getRepos()) {
+        if (nameField.getText().equalsIgnoreCase(repo.getDescription()) && nameUsed == false) {
+          nameUsed = true;
+        }
+        if ((long) idField.getValue() == repo.getId() && idUsed == false) {
+          idUsed = true;
+        }
       }
+      if (nameUsed && idUsed) {
+        JOptionPane.showMessageDialog(null, "A repository with this name and ID already exists", "This repo already exists", ERROR_MESSAGE);
+      } else if (nameUsed && !idUsed) {
+        JOptionPane.showMessageDialog(null, "A repository with this name already exists", "This repo already exists", ERROR_MESSAGE);
+      } else if (!nameUsed && idUsed) {
+        JOptionPane.showMessageDialog(null, "A repository with this ID already exists", "This repo already exists", ERROR_MESSAGE);
+      } else if (!nameUsed && !idUsed) {
+        repoMan.addRepo(nameField.getText(), (long) idField.getValue());
+        hasChanged = true;
+        refreshMenuItemActionPerformed(evt);
+      }
+    }
   }//GEN-LAST:event_addRepoMenuItemActionPerformed
 
   private void removeRepoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeRepoMenuItemActionPerformed
-      String[] repos = new String[repoMan.size()];
-      int i = 0;
-      for (Repo repo : repoMan.getRepos()) {
-          repos[i] = repo.getId() + ": " + repo.getDescription();
-          i++;
+    String[] repos = new String[repoMan.size()];
+    int i = 0;
+    for (Repo repo : repoMan.getRepos()) {
+      repos[i] = repo.getId() + ": " + repo.getDescription();
+      i++;
+    }
+    repoList = new JList();
+    repoList.setListData(repos);
+
+    JTextArea text = new JTextArea();
+    JPanel panel = new JPanel(new GridLayout(0, 1));
+
+    JScrollPane pane = new JScrollPane(repoList);
+    panel.setPreferredSize(new Dimension(500, 500));
+
+    panel.add(pane);
+    int result = JOptionPane.showConfirmDialog(null, panel, "Select repos to remove", OK_CANCEL_OPTION, PLAIN_MESSAGE);
+    if (result == OK_OPTION) {
+      List list = repoList.getSelectedValuesList();
+      for (Object item : list) {
+        repoMan.removeRepo(Long.valueOf(item.toString().substring(0, item.toString().indexOf(":"))));
       }
-      repoList = new JList();
-      repoList.setListData(repos);
-
-      JTextArea text = new JTextArea();
-      JPanel panel = new JPanel(new GridLayout(0, 1));
-
-      JScrollPane pane = new JScrollPane(repoList);
-      panel.setPreferredSize(new Dimension(500, 500));
-
-      panel.add(pane);
-      int result = JOptionPane.showConfirmDialog(null, panel, "Select repos to remove", OK_CANCEL_OPTION, PLAIN_MESSAGE);
-      if (result == OK_OPTION) {
-          List list = repoList.getSelectedValuesList();
-          for (Object item : list) {
-              repoMan.removeRepo(Long.valueOf(item.toString().substring(0, item.toString().indexOf(":"))));
-          }
-          hasChanged = true;
-          refreshMenuItemActionPerformed(evt);
-      }
+      hasChanged = true;
+      refreshMenuItemActionPerformed(evt);
+    }
   }//GEN-LAST:event_removeRepoMenuItemActionPerformed
 
   private void newMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newMenuItemActionPerformed
-      if (hasChanged && savePopup() == CANCEL_OPTION); else {
-          itemMan = new ItemManager();
-          repoMan = new RepoManager();
-          refreshMenuItemActionPerformed(evt);
-          hasChanged = false;
-      }
+    if (hasChanged && savePopup() == CANCEL_OPTION); else {
+      itemMan = new ItemManager();
+      repoMan = new RepoManager();
+      refreshMenuItemActionPerformed(evt);
+      hasChanged = false;
+    }
   }//GEN-LAST:event_newMenuItemActionPerformed
 
   private void saveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemActionPerformed
-      choose.setApproveButtonText("Save");
-      choose.setDialogTitle("Save");
+    choose.setApproveButtonText("Save");
+    choose.setDialogTitle("Save");
 
-      if (choose.showOpenDialog(choose) == JFileChooser.APPROVE_OPTION) {
-          saveFile = choose.getSelectedFile();
+    if (choose.showOpenDialog(choose) == JFileChooser.APPROVE_OPTION) {
+      saveFile = choose.getSelectedFile();
 
-          for (int i = 0; i < 3; i++) {
-              try {
-                  if (i == 2) {
-                      fileWriter = new FileWriter(saveFile.getAbsolutePath().replace(".csv", " Sets.csv"));
-                      fileWriter.append("Item No.,Description,Price(£),Number of items,Item 1,Item 2,Item 3,Item 4,Item 5, Repo 1, Repo 2, Repo 3, Repo 4, Repo 5\n");
-                      for (ItemSet set : itemMan.getItemSets()) {
-                          fileWriter.append(set.getId() + "," + set.getDescription() + "," + set.getPrice() + "," + set.getnItems());
-                          for (Item item : set.getItems()) {
-                              fileWriter.append("," + item.getId());
-                          }
-                          fileWriter.append(",");
-                          for (Repo repo : repoMan.getRepos()) {
-                              for (ItemSet repoSet : repo.getItemSets()) {
-                                  if (repoSet.getId() == set.getId()) {
-                                      fileWriter.append(repo.getId() + ",");
-                                      fileWriter.flush();
-                                      break;
-                                  }
-                              }
-                          }
-                          fileWriter.append("\n");
-                          fileWriter.flush();
-                      }
-                  } else if (i == 1) {
-                      fileWriter = new FileWriter(saveFile);
-                      fileWriter.append("Item No.,Description,Price (£),Repo 1, Repo 2, Repo 3, Repo 4, Repo 5\n");
-                      for (Item item : itemMan.getItems()) {
-                          fileWriter.append(item.getId() + "," + item.getDescription() + "," + item.getPrice() + ",");
-                          for (Repo repo : repoMan.getRepos()) {
-                              for (Item repoItem : repo.getItems()) {
-                                  if (repoItem.getId() == item.getId()) {
-                                      fileWriter.append(repo.getId() + ",");
-                                      fileWriter.flush();
-                                      break;
-                                  }
-                              }
-                          }
-                          fileWriter.append("\n");
-                          fileWriter.flush();
-                      }
-                  } else {
-                      fileWriter = new FileWriter(saveFile.getAbsolutePath().replace(".csv", " Repos.csv"));
-                      fileWriter.append("Repo Name,ID\n");
-                      for (Repo repo : repoMan.getRepos()) {
-                          fileWriter.append(repo.getDescription() + "," + repo.getId() + "\n");
-                          fileWriter.flush();
-                      }
-                  }
-
-                  fileWriter.close();
-              } catch (Exception ex) {
-
+      for (int i = 0; i < 3; i++) {
+        try {
+          if (i == 2) {
+            fileWriter = new FileWriter(saveFile.getAbsolutePath().replace(".csv", " Sets.csv"));
+            fileWriter.append("Item No.,Description,Price(£),Number of items,Item 1,Item 2,Item 3,Item 4,Item 5, Repo 1, Repo 2, Repo 3, Repo 4, Repo 5\n");
+            for (ItemSet set : itemMan.getItemSets()) {
+              fileWriter.append(set.getId() + "," + set.getDescription() + "," + set.getPrice() + "," + set.getnItems());
+              for (Item item : set.getItems()) {
+                fileWriter.append("," + item.getId());
               }
+              fileWriter.append(",");
+              for (Repo repo : repoMan.getRepos()) {
+                for (ItemSet repoSet : repo.getItemSets()) {
+                  if (repoSet.getId() == set.getId()) {
+                    fileWriter.append(repo.getId() + ",");
+                    fileWriter.flush();
+                    break;
+                  }
+                }
+              }
+              fileWriter.append("\n");
+              fileWriter.flush();
+            }
+          } else if (i == 1) {
+            fileWriter = new FileWriter(saveFile);
+            fileWriter.append("Item No.,Description,Price (£),Repo 1, Repo 2, Repo 3, Repo 4, Repo 5\n");
+            for (Item item : itemMan.getItems()) {
+              fileWriter.append(item.getId() + "," + item.getDescription() + "," + item.getPrice() + ",");
+              for (Repo repo : repoMan.getRepos()) {
+                for (Item repoItem : repo.getItems()) {
+                  if (repoItem.getId() == item.getId()) {
+                    fileWriter.append(repo.getId() + ",");
+                    fileWriter.flush();
+                    break;
+                  }
+                }
+              }
+              fileWriter.append("\n");
+              fileWriter.flush();
+            }
+          } else {
+            fileWriter = new FileWriter(saveFile.getAbsolutePath().replace(".csv", " Repos.csv"));
+            fileWriter.append("Repo Name,ID\n");
+            for (Repo repo : repoMan.getRepos()) {
+              fileWriter.append(repo.getDescription() + "," + repo.getId() + "\n");
+              fileWriter.flush();
+            }
           }
-          hasChanged = false;
+
+          fileWriter.close();
+        } catch (Exception ex) {
+
+        }
       }
+      hasChanged = false;
+    }
   }//GEN-LAST:event_saveAsMenuItemActionPerformed
 
   private void manageItemSetsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageItemSetsMenuItemActionPerformed
-      if (!isSetsCreated) {
-          manageItemSetsFrame = new JFrame();
-          manageItemSetsFrame.setResizable(false);
-          manageItemSetsFrame.setMinimumSize(new Dimension(350, 350));
-          manageItemSetsFrame.addWindowListener(new WindowAdapter() {
-              public void windowClosing(java.awt.event.WindowEvent evt) {
-                  isSetsCreated = false;
-                  manageItemSetsFrame.dispose();
-                  refreshMenuItemActionPerformed(null);
+    if (!isSetsCreated) {
+      manageItemSetsFrame = new JFrame();
+      manageItemSetsFrame.setResizable(false);
+      manageItemSetsFrame.setMinimumSize(new Dimension(350, 350));
+      manageItemSetsFrame.addWindowListener(new WindowAdapter() {
+        public void windowClosing(java.awt.event.WindowEvent evt) {
+          isSetsCreated = false;
+          manageItemSetsFrame.dispose();
+          refreshMenuItemActionPerformed(null);
+        }
+      });
+
+      manageSetsRootPanel = new JPanel();
+      manageSetsRootPanelLayout = new GroupLayout(manageSetsRootPanel);
+      manageSetsRootPanel.setLayout(manageSetsRootPanelLayout);
+
+      addItemSetButton = new JButton("Add");
+      addItemSetButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+          addItemSetManager(setItems);
+        }
+      });
+      removeItemSetButton = new JButton("Remove");
+      removeItemSetButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+          removeItemSetManager(setItems);
+        }
+      });
+      if (fromRepo) {
+        setOkButton = new JButton("Ok");
+        setOkButton.addActionListener(new java.awt.event.ActionListener() {
+          public void actionPerformed(java.awt.event.ActionEvent evt) {
+            if (setItems.getSelectionPath().getPathCount() == 2) {
+              if (JOptionPane.showConfirmDialog(manageSetsRootPanel, "Do you want to add the item set: " + setItems.getSelectionPath().getLastPathComponent().toString() + "?", "Do you wish to add this item set?", YES_NO_OPTION, WARNING_MESSAGE) == YES_OPTION) {
+                if (!repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).containsItemSet(Long.valueOf(setItems.getModel().getChild(setItems.getSelectionPath().getLastPathComponent(), 0).toString()))) {
+                  repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).addSet(itemMan.getItemSet(Long.valueOf(setItems.getModel().getChild(setItems.getSelectionPath().getLastPathComponent(), 0).toString())));
+                  hasChanged = true;
+                  manageReposMenuItemActionPerformed(null);
+                  manageItemSetsFrame.getWindowListeners()[0].windowClosing(null);
+                  fromRepo = false;
+                } else {
+                  JOptionPane.showMessageDialog(manageItemSetsFrame, "This item set is already in the repository", "Set already in repo", ERROR_MESSAGE);
+                }
               }
-          });
-
-          manageSetsRootPanel = new JPanel();
-          manageSetsRootPanelLayout = new GroupLayout(manageSetsRootPanel);
-          manageSetsRootPanel.setLayout(manageSetsRootPanelLayout);
-
-          addItemSetButton = new JButton("Add");
-          addItemSetButton.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  addItemSetManager(setItems);
-              }
-          });
-          removeItemSetButton = new JButton("Remove");
-          removeItemSetButton.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  removeItemSetManager(setItems);
-              }
-          });
-          if (fromRepo) {
-              setOkButton = new JButton("Ok");
-              setOkButton.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                      if (setItems.getSelectionPath().getPathCount() == 2) {
-                          if (JOptionPane.showConfirmDialog(manageSetsRootPanel, "Do you want to add the item set: " + setItems.getSelectionPath().getLastPathComponent().toString() + "?", "Do you wish to add this item set?", YES_NO_OPTION, WARNING_MESSAGE) == YES_OPTION) {
-                              if (!repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).containsItemSet(Long.valueOf(setItems.getModel().getChild(setItems.getSelectionPath().getLastPathComponent(), 0).toString()))) {
-                                  repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).addSet(itemMan.getItemSet(Long.valueOf(setItems.getModel().getChild(setItems.getSelectionPath().getLastPathComponent(), 0).toString())));
-                                  hasChanged = true;
-                                  manageReposMenuItemActionPerformed(null);
-                                  manageItemSetsFrame.getWindowListeners()[0].windowClosing(null);
-                                  fromRepo = false;
-                              } else {
-                                  JOptionPane.showMessageDialog(manageItemSetsFrame, "This item set is already in the repository", "Set already in repo", ERROR_MESSAGE);
-                              }
-                          }
-                      }
-                  }
-              });
+            }
           }
-          manageSetsPane = new JScrollPane();
+        });
       }
-      setItems = new javax.swing.JTree();
-      TreeSelectionModel model = setItems.getSelectionModel();
-      model.setSelectionMode(SINGLE_TREE_SELECTION);
-      setItems.setSelectionModel(model);
+      manageSetsPane = new JScrollPane();
+    }
+    setItems = new javax.swing.JTree();
+    TreeSelectionModel model = setItems.getSelectionModel();
+    model.setSelectionMode(SINGLE_TREE_SELECTION);
+    setItems.setSelectionModel(model);
 
-      javax.swing.tree.DefaultMutableTreeNode setRootNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets");
+    javax.swing.tree.DefaultMutableTreeNode setRootNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets");
 
-      for (ItemSet set : itemMan.getItemSets()) {
-          javax.swing.tree.DefaultMutableTreeNode setNode = new javax.swing.tree.DefaultMutableTreeNode(set.getDescription());
-          javax.swing.tree.DefaultMutableTreeNode setIdNode = new javax.swing.tree.DefaultMutableTreeNode(set.getId());
-          javax.swing.tree.DefaultMutableTreeNode setPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + set.getPrice());
-          javax.swing.tree.DefaultMutableTreeNode setItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + set.getItems().size() + ")");
-          for (Item item : set.getItems()) {
-              javax.swing.tree.DefaultMutableTreeNode setItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
-              javax.swing.tree.DefaultMutableTreeNode itemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
-              javax.swing.tree.DefaultMutableTreeNode itemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
-              setItemNode.add(itemIdNode);
-              setItemNode.add(itemPriceNode);
-              setItemsNode.add(setItemNode);
-          }
-          setNode.add(setIdNode);
-          setNode.add(setPriceNode);
-          setNode.add(setItemsNode);
-          setRootNode.add(setNode);
+    for (ItemSet set : itemMan.getItemSets()) {
+      javax.swing.tree.DefaultMutableTreeNode setNode = new javax.swing.tree.DefaultMutableTreeNode(set.getDescription());
+      javax.swing.tree.DefaultMutableTreeNode setIdNode = new javax.swing.tree.DefaultMutableTreeNode(set.getId());
+      javax.swing.tree.DefaultMutableTreeNode setPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + set.getPrice());
+      javax.swing.tree.DefaultMutableTreeNode setItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + set.getItems().size() + ")");
+      for (Item item : set.getItems()) {
+        javax.swing.tree.DefaultMutableTreeNode setItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
+        javax.swing.tree.DefaultMutableTreeNode itemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
+        javax.swing.tree.DefaultMutableTreeNode itemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
+        setItemNode.add(itemIdNode);
+        setItemNode.add(itemPriceNode);
+        setItemsNode.add(setItemNode);
+      }
+      setNode.add(setIdNode);
+      setNode.add(setPriceNode);
+      setNode.add(setItemsNode);
+      setRootNode.add(setNode);
+    }
+
+    setItems.setModel(new javax.swing.tree.DefaultTreeModel(setRootNode));
+    manageSetsPane.setViewportView(setItems);
+    if (!isSetsCreated) {
+      if (fromRepo) {
+        manageSetsRootPanelLayout.setHorizontalGroup(
+                manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(manageSetsPane)
+                .addGroup(manageSetsRootPanelLayout.createSequentialGroup()
+                        .addComponent(addItemSetButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(removeItemSetButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(setOkButton)
+                        .addGap(0, 248, Short.MAX_VALUE))
+        );
+
+        manageSetsRootPanelLayout.setVerticalGroup(
+                manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(manageSetsRootPanelLayout.createSequentialGroup()
+                        .addComponent(manageSetsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(removeItemSetButton)
+                                .addComponent(addItemSetButton)
+                                .addComponent(setOkButton))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+      } else {
+        manageSetsRootPanelLayout.setHorizontalGroup(
+                manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(manageSetsPane)
+                .addGroup(manageSetsRootPanelLayout.createSequentialGroup()
+                        .addComponent(addItemSetButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(removeItemSetButton)
+                        .addGap(0, 248, Short.MAX_VALUE))
+        );
+
+        manageSetsRootPanelLayout.setVerticalGroup(
+                manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(manageSetsRootPanelLayout.createSequentialGroup()
+                        .addComponent(manageSetsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(removeItemSetButton)
+                                .addComponent(addItemSetButton))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
       }
 
-      setItems.setModel(new javax.swing.tree.DefaultTreeModel(setRootNode));
-      manageSetsPane.setViewportView(setItems);
-      if (!isSetsCreated) {
-          if (fromRepo) {
-              manageSetsRootPanelLayout.setHorizontalGroup(
-                      manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(manageSetsPane)
-                      .addGroup(manageSetsRootPanelLayout.createSequentialGroup()
-                              .addComponent(addItemSetButton)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addComponent(removeItemSetButton)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addComponent(setOkButton)
-                              .addGap(0, 248, Short.MAX_VALUE))
-              );
+      manageItemSetsFrame.add(manageSetsRootPanel);
+      manageItemSetsFrame.setVisible(true);
 
-              manageSetsRootPanelLayout.setVerticalGroup(
-                      manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGroup(manageSetsRootPanelLayout.createSequentialGroup()
-                              .addComponent(manageSetsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addGroup(manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                      .addComponent(removeItemSetButton)
-                                      .addComponent(addItemSetButton)
-                                      .addComponent(setOkButton))
-                              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-              );
-          } else {
-              manageSetsRootPanelLayout.setHorizontalGroup(
-                      manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(manageSetsPane)
-                      .addGroup(manageSetsRootPanelLayout.createSequentialGroup()
-                              .addComponent(addItemSetButton)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addComponent(removeItemSetButton)
-                              .addGap(0, 248, Short.MAX_VALUE))
-              );
-
-              manageSetsRootPanelLayout.setVerticalGroup(
-                      manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGroup(manageSetsRootPanelLayout.createSequentialGroup()
-                              .addComponent(manageSetsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addGroup(manageSetsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                      .addComponent(removeItemSetButton)
-                                      .addComponent(addItemSetButton))
-                              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-              );
-          }
-
-          manageItemSetsFrame.add(manageSetsRootPanel);
-          manageItemSetsFrame.setVisible(true);
-
-          isSetsCreated = true;
-      }
+      isSetsCreated = true;
+    }
   }//GEN-LAST:event_manageItemSetsMenuItemActionPerformed
 
   private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-      if (!isItemsCreated) {
-          manageItemsFrame = new JFrame();
-          manageItemsFrame.setResizable(false);
-          manageItemsFrame.setMinimumSize(new Dimension(500, 500));
-          manageItemsFrame.addWindowListener(new WindowAdapter() {
-              public void windowClosing(java.awt.event.WindowEvent evt) {
-                  isItemsCreated = false;
-                  manageItemsFrame.dispose();
-                  if (hasChanged) {
-                      refreshMenuItemActionPerformed(null);
-                  }
-              }
-          });
-
-          manageItemsRootPanel = new JPanel();
-          manageItemsRootPanelLayout = new GroupLayout(manageItemsRootPanel);
-          manageItemsRootPanel.setLayout(manageItemsRootPanelLayout);
-
-          addItemButton = new JButton("Add");
-          addItemButton.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  addItemMenuItemActionPerformed(evt);
-                  jMenuItem1ActionPerformed(evt);
-              }
-          });
-          removeItemButton = new JButton("Remove");
-          removeItemButton.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  if (JOptionPane.showConfirmDialog(manageItemsRootPanel, "Do you want to remove the item: " + itemManList.getSelectedValue().toString() + "?", "Do you wish to remove this item?", YES_NO_OPTION, WARNING_MESSAGE) == YES_OPTION) {
-                      for (ItemSet set : itemMan.getItemSets()) {
-                          if (set.containsItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))))) {
-                              if (replaceItemsRadioButton.isSelected()) {
-                                  itemMan.findAnother(itemMan.getItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":")))), set.getId());
-                              }
-                              set.removeItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))));
-                          }
-                      }
-                      for (Repo repo : repoMan.getRepos()) {
-                          if (repo.containsItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))))) {
-                              repo.removeItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))));
-                          }
-                      }
-                      itemMan.removeItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))));
-                      hasChanged = true;
-                      jMenuItem1ActionPerformed(null);
-                      if (fromItemSet) {
-                          manageItemSetsMenuItemActionPerformed(null);
-                      }
-                      if (fromRepo) {
-                          manageReposMenuItemActionPerformed(null);
-                      }
-                  }
-              }
-          });
-          if (fromItemSet) {
-              itemOkButton = new JButton("Ok");
-              itemOkButton.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                      if (JOptionPane.showConfirmDialog(manageItemsRootPanel, "Do you want to add the item: " + itemManList.getSelectedValue().toString() + "?", "Do you wish to add this item?", YES_NO_OPTION, WARNING_MESSAGE) == YES_OPTION) {
-                          if (!itemMan.getItemSet(Long.valueOf(setItems.getModel().getChild(setItems.getSelectionPath().getPathComponent(1), 0).toString())).containsItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))))) {
-                              itemMan.getItemSet(Long.valueOf(setItems.getModel().getChild(setItems.getSelectionPath().getPathComponent(1), 0).toString())).addItem(itemMan.getItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":")))));
-                              hasChanged = true;
-                              manageItemSetsMenuItemActionPerformed(null);
-                              manageItemsFrame.getWindowListeners()[0].windowClosing(null);
-                              fromItemSet = false;
-                          } else {
-                              JOptionPane.showMessageDialog(itemSetList, "This set already contains this item", "Item already in set", ERROR_MESSAGE);
-                          }
-                      }
-                  }
-              });
+    if (!isItemsCreated) {
+      manageItemsFrame = new JFrame();
+      manageItemsFrame.setResizable(false);
+      manageItemsFrame.setMinimumSize(new Dimension(500, 500));
+      manageItemsFrame.addWindowListener(new WindowAdapter() {
+        public void windowClosing(java.awt.event.WindowEvent evt) {
+          isItemsCreated = false;
+          manageItemsFrame.dispose();
+          if (hasChanged) {
+            refreshMenuItemActionPerformed(null);
           }
-          if (fromRepoItem) {
-              itemOkButton = new JButton("Ok");
-              itemOkButton.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                      if (JOptionPane.showConfirmDialog(manageItemsRootPanel, "Do you want to add the item: " + itemManList.getSelectedValue().toString() + "?", "Do you wish to add this item?", YES_NO_OPTION, WARNING_MESSAGE) == YES_OPTION) {
-                          if (!repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).containsItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))))) {
-                              repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).addItem(itemMan.getItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":")))));
-                              hasChanged = true;
-                              if (sortRepo) {
-                                  repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().sort();
-                              }
-                              manageReposMenuItemActionPerformed(null);
-                              manageItemsFrame.getWindowListeners()[0].windowClosing(null);
-                              fromRepoItem = false;
-                          } else {
-                              JOptionPane.showMessageDialog(itemManList, "This item is already in this repository", "Item already in repo", ERROR_MESSAGE);
-                          }
-                      }
-                  }
-              });
+        }
+      });
+
+      manageItemsRootPanel = new JPanel();
+      manageItemsRootPanelLayout = new GroupLayout(manageItemsRootPanel);
+      manageItemsRootPanel.setLayout(manageItemsRootPanelLayout);
+
+      addItemButton = new JButton("Add");
+      addItemButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+          addItemMenuItemActionPerformed(evt);
+          jMenuItem1ActionPerformed(evt);
+        }
+      });
+      removeItemButton = new JButton("Remove");
+      removeItemButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+          if (JOptionPane.showConfirmDialog(manageItemsRootPanel, "Do you want to remove the item: " + itemManList.getSelectedValue().toString() + "?", "Do you wish to remove this item?", YES_NO_OPTION, WARNING_MESSAGE) == YES_OPTION) {
+            for (ItemSet set : itemMan.getItemSets()) {
+              if (set.containsItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))))) {
+                if (replaceItemsRadioButton.isSelected()) {
+                  JOptionPane.showMessageDialog(manageItemsRootPanel, "The item will be replaced with: " + itemMan.findAnother(itemMan.getItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":")))), set.getId()), "The item will be replaced", INFORMATION_MESSAGE);
+                }
+                set.removeItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))));
+              }
+            }
+            String repos = "";
+            for (Repo repo : repoMan.getRepos()) {
+              if (repo.containsItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))))) {
+                repos += repo.getDescription() + "\n";
+                repo.removeItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))));
+              }
+            }
+            JOptionPane.showMessageDialog(manageItemsRootPanel, "The item was removed from the following repos: \n" + repos, "The item was removed", INFORMATION_MESSAGE);
+            itemMan.removeItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))));
+            hasChanged = true;
+            jMenuItem1ActionPerformed(null);
+            if (fromItemSet) {
+              manageItemSetsMenuItemActionPerformed(null);
+            }
+            if (fromRepo) {
+              manageReposMenuItemActionPerformed(null);
+            }
           }
-          manageItemsPane = new JScrollPane();
-      }
-      itemManList = new javax.swing.JList();
-      itemManList.setSelectionMode(SINGLE_SELECTION);
-      String[] items = new String[(int) itemMan.size()];
-      int i = 0;
-      for (Item item : itemMan.getItems()) {
-          items[i] = item.getId() + ": " + item.getDescription() + " £" + item.getPrice();
-          i++;
-      }
-      itemManList.setListData(items);
-      itemManList.setSelectionMode(SINGLE_TREE_SELECTION);
-      manageItemsPane.setViewportView(itemManList);
-
-      if (!isItemsCreated) {
-          if (fromItemSet ^ fromRepoItem) {
-              manageItemsRootPanelLayout.setHorizontalGroup(
-                      manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(manageItemsPane)
-                      .addGroup(manageItemsRootPanelLayout.createSequentialGroup()
-                              .addComponent(addItemButton)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addComponent(removeItemButton)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                              .addComponent(itemOkButton)
-                              .addGap(0, 248, Short.MAX_VALUE))
-              );
-
-              manageItemsRootPanelLayout.setVerticalGroup(
-                      manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGroup(manageItemsRootPanelLayout.createSequentialGroup()
-                              .addComponent(manageItemsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addGroup(manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                      .addComponent(removeItemButton)
-                                      .addComponent(addItemButton)
-                                      .addComponent(itemOkButton))
-                              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                      )
-              );
-          } else {
-              manageItemsRootPanelLayout.setHorizontalGroup(
-                      manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(manageItemsPane)
-                      .addGroup(manageItemsRootPanelLayout.createSequentialGroup()
-                              .addComponent(addItemButton)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addComponent(removeItemButton)
-                              .addGap(0, 248, Short.MAX_VALUE))
-              );
-
-              manageItemsRootPanelLayout.setVerticalGroup(
-                      manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGroup(manageItemsRootPanelLayout.createSequentialGroup()
-                              .addComponent(manageItemsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                              .addGroup(manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                      .addComponent(removeItemButton)
-                                      .addComponent(addItemButton))
-                              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-              );
+        }
+      });
+      if (fromItemSet) {
+        itemOkButton = new JButton("Ok");
+        itemOkButton.addActionListener(new java.awt.event.ActionListener() {
+          public void actionPerformed(java.awt.event.ActionEvent evt) {
+            if (JOptionPane.showConfirmDialog(manageItemsRootPanel, "Do you want to add the item: " + itemManList.getSelectedValue().toString() + "?", "Do you wish to add this item?", YES_NO_OPTION, WARNING_MESSAGE) == YES_OPTION) {
+              if (!itemMan.getItemSet(Long.valueOf(setItems.getModel().getChild(setItems.getSelectionPath().getPathComponent(1), 0).toString())).containsItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))))) {
+                itemMan.getItemSet(Long.valueOf(setItems.getModel().getChild(setItems.getSelectionPath().getPathComponent(1), 0).toString())).addItem(itemMan.getItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":")))));
+                hasChanged = true;
+                manageItemSetsMenuItemActionPerformed(null);
+                manageItemsFrame.getWindowListeners()[0].windowClosing(null);
+                fromItemSet = false;
+              } else {
+                JOptionPane.showMessageDialog(itemSetList, "This set already contains this item", "Item already in set", ERROR_MESSAGE);
+              }
+            }
           }
-          manageItemsFrame.add(manageItemsRootPanel);
-          manageItemsFrame.setVisible(true);
-
-          isItemsCreated = true;
+        });
       }
+      if (fromRepoItem) {
+        itemOkButton = new JButton("Ok");
+        itemOkButton.addActionListener(new java.awt.event.ActionListener() {
+          public void actionPerformed(java.awt.event.ActionEvent evt) {
+            if (JOptionPane.showConfirmDialog(manageItemsRootPanel, "Do you want to add the item: " + itemManList.getSelectedValue().toString() + "?", "Do you wish to add this item?", YES_NO_OPTION, WARNING_MESSAGE) == YES_OPTION) {
+              if (!repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).containsItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":"))))) {
+                repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).addItem(itemMan.getItem(Long.valueOf(itemManList.getSelectedValue().toString().substring(0, itemManList.getSelectedValue().toString().indexOf(":")))));
+                hasChanged = true;
+                if (sortRepo) {
+                  repoMan.getRepos().get(Long.valueOf(repoTree.getModel().getChild(repoTree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().sort();
+                }
+                manageReposMenuItemActionPerformed(null);
+                manageItemsFrame.getWindowListeners()[0].windowClosing(null);
+                fromRepoItem = false;
+              } else {
+                JOptionPane.showMessageDialog(itemManList, "This item is already in this repository", "Item already in repo", ERROR_MESSAGE);
+              }
+            }
+          }
+        });
+      }
+      manageItemsPane = new JScrollPane();
+    }
+    itemManList = new javax.swing.JList();
+    itemManList.setSelectionMode(SINGLE_SELECTION);
+    String[] items = new String[(int) itemMan.size()];
+    int i = 0;
+    for (Item item : itemMan.getItems()) {
+      items[i] = item.getId() + ": " + item.getDescription() + " £" + item.getPrice();
+      i++;
+    }
+    itemManList.setListData(items);
+    itemManList.setSelectionMode(SINGLE_TREE_SELECTION);
+    manageItemsPane.setViewportView(itemManList);
+
+    if (!isItemsCreated) {
+      if (fromItemSet ^ fromRepoItem) {
+        manageItemsRootPanelLayout.setHorizontalGroup(
+                manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(manageItemsPane)
+                .addGroup(manageItemsRootPanelLayout.createSequentialGroup()
+                        .addComponent(addItemButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(removeItemButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(itemOkButton)
+                        .addGap(0, 248, Short.MAX_VALUE))
+        );
+
+        manageItemsRootPanelLayout.setVerticalGroup(
+                manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(manageItemsRootPanelLayout.createSequentialGroup()
+                        .addComponent(manageItemsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(removeItemButton)
+                                .addComponent(addItemButton)
+                                .addComponent(itemOkButton))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                )
+        );
+      } else {
+        manageItemsRootPanelLayout.setHorizontalGroup(
+                manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(manageItemsPane)
+                .addGroup(manageItemsRootPanelLayout.createSequentialGroup()
+                        .addComponent(addItemButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(removeItemButton)
+                        .addGap(0, 248, Short.MAX_VALUE))
+        );
+
+        manageItemsRootPanelLayout.setVerticalGroup(
+                manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(manageItemsRootPanelLayout.createSequentialGroup()
+                        .addComponent(manageItemsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(manageItemsRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(removeItemButton)
+                                .addComponent(addItemButton))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+      }
+      manageItemsFrame.add(manageItemsRootPanel);
+      manageItemsFrame.setVisible(true);
+
+      isItemsCreated = true;
+    }
   }//GEN-LAST:event_jMenuItem1ActionPerformed
 
   private void manageReposMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageReposMenuItemActionPerformed
-      if (!isReposCreated) {
-          manageReposFrame = new JFrame();
-          manageReposFrame.setResizable(false);
-          manageReposFrame.setMinimumSize(new Dimension(350, 350));
-          manageReposFrame.addWindowListener(new WindowAdapter() {
-              public void windowClosing(java.awt.event.WindowEvent evt) {
-                  isReposCreated = false;
-                  manageReposFrame.dispose();
-                  if (hasChanged) {
-                      refreshMenuItemActionPerformed(null);
-                  }
-              }
-          });
-
-          manageReposRootPanel = new JPanel();
-          manageReposRootPanelLayout = new GroupLayout(manageReposRootPanel);
-          manageReposRootPanel.setLayout(manageReposRootPanelLayout);
-
-          addRepoButton = new JButton("Add");
-          addRepoButton.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  addRepoManager(repoTree);
-              }
-          });
-          removeRepoButton = new JButton("Remove");
-          removeRepoButton.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  removeRepoManager(repoTree);
-              }
-          });
-          manageReposPane = new JScrollPane();
-      }
-      repoTree = new javax.swing.JTree();
-      TreeSelectionModel model = repoTree.getSelectionModel();
-      model.setSelectionMode(SINGLE_TREE_SELECTION);
-      repoTree.setSelectionModel(model);
-
-      javax.swing.tree.DefaultMutableTreeNode repoRootNode = new javax.swing.tree.DefaultMutableTreeNode("Repositories");
-
-      for (Repo repo : repoMan.getRepos()) {
-          javax.swing.tree.DefaultMutableTreeNode repoNameNode = new javax.swing.tree.DefaultMutableTreeNode(repo.getDescription());
-          javax.swing.tree.DefaultMutableTreeNode repoIdNode = new javax.swing.tree.DefaultMutableTreeNode(repo.getId());
-          javax.swing.tree.DefaultMutableTreeNode repoItemSetNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets (" + repo.getItemSets().size() + ")");
-          javax.swing.tree.DefaultMutableTreeNode repoItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + repo.getItems().size() + ")");
-          for (ItemSet set : repo.getItemSets()) {
-              javax.swing.tree.DefaultMutableTreeNode setNode = new javax.swing.tree.DefaultMutableTreeNode(set.getDescription());
-              javax.swing.tree.DefaultMutableTreeNode setPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + set.getPrice());
-              javax.swing.tree.DefaultMutableTreeNode setIdNode = new javax.swing.tree.DefaultMutableTreeNode(set.getId());
-              javax.swing.tree.DefaultMutableTreeNode setItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + set.getItems().size() + ")");
-              for (Item item : set.getItems()) {
-                  javax.swing.tree.DefaultMutableTreeNode setItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
-                  javax.swing.tree.DefaultMutableTreeNode itemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
-                  javax.swing.tree.DefaultMutableTreeNode itemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
-                  setItemNode.add(itemIdNode);
-                  setItemNode.add(itemPriceNode);
-                  setItemsNode.add(setItemNode);
-              }
-              setNode.add(setIdNode);
-              setNode.add(setPriceNode);
-              setNode.add(setItemsNode);
-              repoItemSetNode.add(setNode);
+    if (!isReposCreated) {
+      manageReposFrame = new JFrame();
+      manageReposFrame.setResizable(false);
+      manageReposFrame.setMinimumSize(new Dimension(350, 350));
+      manageReposFrame.addWindowListener(new WindowAdapter() {
+        public void windowClosing(java.awt.event.WindowEvent evt) {
+          isReposCreated = false;
+          manageReposFrame.dispose();
+          if (hasChanged) {
+            refreshMenuItemActionPerformed(null);
           }
-          for (Item item : repo.getItems()) {
-              javax.swing.tree.DefaultMutableTreeNode repoItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
-              javax.swing.tree.DefaultMutableTreeNode repoItemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
-              javax.swing.tree.DefaultMutableTreeNode repoItemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
-              repoItemNode.add(repoItemIdNode);
-              repoItemNode.add(repoItemPriceNode);
-              repoItemsNode.add(repoItemNode);
-          }
-          repoNameNode.add(repoIdNode);
-          repoNameNode.add(repoItemSetNode);
-          repoNameNode.add(repoItemsNode);
-          repoRootNode.add(repoNameNode);
+        }
+      });
+
+      manageReposRootPanel = new JPanel();
+      manageReposRootPanelLayout = new GroupLayout(manageReposRootPanel);
+      manageReposRootPanel.setLayout(manageReposRootPanelLayout);
+
+      addRepoButton = new JButton("Add");
+      addRepoButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+          addRepoManager(repoTree);
+        }
+      });
+      removeRepoButton = new JButton("Remove");
+      removeRepoButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+          removeRepoManager(repoTree);
+        }
+      });
+      manageReposPane = new JScrollPane();
+    }
+    repoTree = new javax.swing.JTree();
+    TreeSelectionModel model = repoTree.getSelectionModel();
+    model.setSelectionMode(SINGLE_TREE_SELECTION);
+    repoTree.setSelectionModel(model);
+
+    javax.swing.tree.DefaultMutableTreeNode repoRootNode = new javax.swing.tree.DefaultMutableTreeNode("Repositories");
+
+    for (Repo repo : repoMan.getRepos()) {
+      javax.swing.tree.DefaultMutableTreeNode repoNameNode = new javax.swing.tree.DefaultMutableTreeNode(repo.getDescription());
+      javax.swing.tree.DefaultMutableTreeNode repoIdNode = new javax.swing.tree.DefaultMutableTreeNode(repo.getId());
+      javax.swing.tree.DefaultMutableTreeNode repoItemSetNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets (" + repo.getItemSets().size() + ")");
+      javax.swing.tree.DefaultMutableTreeNode repoItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + repo.getItems().size() + ")");
+      for (ItemSet set : repo.getItemSets()) {
+        javax.swing.tree.DefaultMutableTreeNode setNode = new javax.swing.tree.DefaultMutableTreeNode(set.getDescription());
+        javax.swing.tree.DefaultMutableTreeNode setPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + set.getPrice());
+        javax.swing.tree.DefaultMutableTreeNode setIdNode = new javax.swing.tree.DefaultMutableTreeNode(set.getId());
+        javax.swing.tree.DefaultMutableTreeNode setItemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + set.getItems().size() + ")");
+        for (Item item : set.getItems()) {
+          javax.swing.tree.DefaultMutableTreeNode setItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
+          javax.swing.tree.DefaultMutableTreeNode itemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
+          javax.swing.tree.DefaultMutableTreeNode itemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
+          setItemNode.add(itemIdNode);
+          setItemNode.add(itemPriceNode);
+          setItemsNode.add(setItemNode);
+        }
+        setNode.add(setIdNode);
+        setNode.add(setPriceNode);
+        setNode.add(setItemsNode);
+        repoItemSetNode.add(setNode);
       }
-
-      repoTree.setModel(new javax.swing.tree.DefaultTreeModel(repoRootNode));
-      manageReposPane.setViewportView(repoTree);
-      if (!isReposCreated) {
-          manageReposRootPanelLayout.setHorizontalGroup(
-                  manageReposRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(manageReposPane)
-                  .addGroup(manageReposRootPanelLayout.createSequentialGroup()
-                          .addComponent(addRepoButton)
-                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                          .addComponent(removeRepoButton)
-                          .addGap(0, 248, Short.MAX_VALUE))
-          );
-
-          manageReposRootPanelLayout.setVerticalGroup(
-                  manageReposRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(manageReposRootPanelLayout.createSequentialGroup()
-                          .addComponent(manageReposPane, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                          .addGroup(manageReposRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                  .addComponent(removeRepoButton)
-                                  .addComponent(addRepoButton))
-                          .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-          );
-
-          manageReposFrame.add(manageReposRootPanel);
-          manageReposFrame.setVisible(true);
-
-          isReposCreated = true;
+      for (Item item : repo.getItems()) {
+        javax.swing.tree.DefaultMutableTreeNode repoItemNode = new javax.swing.tree.DefaultMutableTreeNode(item.getDescription());
+        javax.swing.tree.DefaultMutableTreeNode repoItemPriceNode = new javax.swing.tree.DefaultMutableTreeNode("£" + item.getPrice());
+        javax.swing.tree.DefaultMutableTreeNode repoItemIdNode = new javax.swing.tree.DefaultMutableTreeNode(item.getId());
+        repoItemNode.add(repoItemIdNode);
+        repoItemNode.add(repoItemPriceNode);
+        repoItemsNode.add(repoItemNode);
       }
+      repoNameNode.add(repoIdNode);
+      repoNameNode.add(repoItemSetNode);
+      repoNameNode.add(repoItemsNode);
+      repoRootNode.add(repoNameNode);
+    }
+
+    repoTree.setModel(new javax.swing.tree.DefaultTreeModel(repoRootNode));
+    manageReposPane.setViewportView(repoTree);
+    if (!isReposCreated) {
+      manageReposRootPanelLayout.setHorizontalGroup(
+              manageReposRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(manageReposPane)
+              .addGroup(manageReposRootPanelLayout.createSequentialGroup()
+                      .addComponent(addRepoButton)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addComponent(removeRepoButton)
+                      .addGap(0, 248, Short.MAX_VALUE))
+      );
+
+      manageReposRootPanelLayout.setVerticalGroup(
+              manageReposRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(manageReposRootPanelLayout.createSequentialGroup()
+                      .addComponent(manageReposPane, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                      .addGroup(manageReposRootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                              .addComponent(removeRepoButton)
+                              .addComponent(addRepoButton))
+                      .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+      );
+
+      manageReposFrame.add(manageReposRootPanel);
+      manageReposFrame.setVisible(true);
+
+      isReposCreated = true;
+    }
   }//GEN-LAST:event_manageReposMenuItemActionPerformed
 
   private void addItemSetMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemSetMenuItemActionPerformed
-      String name = "";
-      boolean nameUsed = false, idUsed = false;
-      double priceNum;
+    String name = "";
+    boolean nameUsed = false, idUsed = false;
+    double priceNum;
 
-      NumberFormat id = NumberFormat.getIntegerInstance();
-      NumberFormat price = NumberFormat.getNumberInstance();
-      price.setMaximumFractionDigits(2);
-      price.setMinimumFractionDigits(2);
-      JFormattedTextField nameField = new JFormattedTextField();
-      JFormattedTextField idField = new JFormattedTextField(id);
-      JFormattedTextField priceField = new JFormattedTextField(price);
+    NumberFormat id = NumberFormat.getIntegerInstance();
+    NumberFormat price = NumberFormat.getNumberInstance();
+    price.setMaximumFractionDigits(2);
+    price.setMinimumFractionDigits(2);
+    JFormattedTextField nameField = new JFormattedTextField();
+    JFormattedTextField idField = new JFormattedTextField(id);
+    JFormattedTextField priceField = new JFormattedTextField(price);
 
-      JPanel panel = new JPanel(new GridLayout(0, 1));
-      panel.add(new JLabel("ID: "));
-      panel.add(idField);
-      panel.add(new JLabel("Name: "));
-      panel.add(nameField);
-      panel.add(new JLabel("Price(£): "));
-      panel.add(priceField);
+    JPanel panel = new JPanel(new GridLayout(0, 1));
+    panel.add(new JLabel("ID: "));
+    panel.add(idField);
+    panel.add(new JLabel("Name: "));
+    panel.add(nameField);
+    panel.add(new JLabel("Price(£): "));
+    panel.add(priceField);
 
-      int result = JOptionPane.showConfirmDialog(null, panel, "Add a new itemSet", OK_CANCEL_OPTION, PLAIN_MESSAGE);
-      if (result == OK_OPTION) {
-          if (priceField.getValue().getClass().getName().equals("java.lang.Long")) {
-              priceNum = (long) priceField.getValue();
-          } else {
-              priceNum = (double) priceField.getValue();
-          }
-          for (ItemSet set : itemMan.getItemSets()) {
-              if (nameField.getText().equalsIgnoreCase(set.getDescription()) && nameUsed == false) {
-                  nameUsed = true;
-              }
-              if ((long) idField.getValue() == set.getId() && idUsed == false) {
-                  idUsed = true;
-              }
-          }
-          if (nameUsed && idUsed) {
-              JOptionPane.showMessageDialog(this, "An item set with this name and ID already exists", "This item set already exists", ERROR_MESSAGE);
-          } else if (nameUsed && !idUsed) {
-              JOptionPane.showMessageDialog(this, "An item set with this name already exists", "This item set already exists", ERROR_MESSAGE);
-          } else if (!nameUsed && idUsed) {
-              JOptionPane.showMessageDialog(this, "A item set with this ID already exists", "This item set already exists", ERROR_MESSAGE);
-          } else if (!nameUsed && !idUsed) {
-              itemMan.addItemSet((long) idField.getValue(), priceNum, nameField.getText());
-              hasChanged = true;
-              refreshMenuItemActionPerformed(evt);
-          }
+    int result = JOptionPane.showConfirmDialog(null, panel, "Add a new itemSet", OK_CANCEL_OPTION, PLAIN_MESSAGE);
+    if (result == OK_OPTION) {
+      if (priceField.getValue().getClass().getName().equals("java.lang.Long")) {
+        priceNum = (long) priceField.getValue();
+      } else {
+        priceNum = (double) priceField.getValue();
       }
+      for (ItemSet set : itemMan.getItemSets()) {
+        if (nameField.getText().equalsIgnoreCase(set.getDescription()) && nameUsed == false) {
+          nameUsed = true;
+        }
+        if ((long) idField.getValue() == set.getId() && idUsed == false) {
+          idUsed = true;
+        }
+      }
+      if (nameUsed && idUsed) {
+        JOptionPane.showMessageDialog(this, "An item set with this name and ID already exists", "This item set already exists", ERROR_MESSAGE);
+      } else if (nameUsed && !idUsed) {
+        JOptionPane.showMessageDialog(this, "An item set with this name already exists", "This item set already exists", ERROR_MESSAGE);
+      } else if (!nameUsed && idUsed) {
+        JOptionPane.showMessageDialog(this, "A item set with this ID already exists", "This item set already exists", ERROR_MESSAGE);
+      } else if (!nameUsed && !idUsed) {
+        itemMan.addItemSet((long) idField.getValue(), priceNum, nameField.getText());
+        hasChanged = true;
+        refreshMenuItemActionPerformed(evt);
+      }
+    }
   }//GEN-LAST:event_addItemSetMenuItemActionPerformed
 
   private void removeItemSetMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeItemSetMenuItemActionPerformed
-      String[] itemSets = new String[(int) itemMan.getItemSets().size()];
-      int i = 0;
-      for (ItemSet set : itemMan.getItemSets()) {
-          itemSets[i] = set.getId() + ": " + set.getDescription() + " " + set.getPrice();
-          i++;
-      }
-      itemSetList = new JList();
-      itemSetList.setListData(itemSets);
+    String[] itemSets = new String[(int) itemMan.getItemSets().size()];
+    int i = 0;
+    for (ItemSet set : itemMan.getItemSets()) {
+      itemSets[i] = set.getId() + ": " + set.getDescription() + " " + set.getPrice();
+      i++;
+    }
+    itemSetList = new JList();
+    itemSetList.setListData(itemSets);
 
-      JTextArea text = new JTextArea();
-      JPanel panel = new JPanel(new GridLayout(0, 1));
+    JTextArea text = new JTextArea();
+    JPanel panel = new JPanel(new GridLayout(0, 1));
 
-      JScrollPane pane = new JScrollPane(itemSetList);
-      panel.setPreferredSize(new Dimension(500, 500));
+    JScrollPane pane = new JScrollPane(itemSetList);
+    panel.setPreferredSize(new Dimension(500, 500));
 
-      panel.add(pane);
-      int result = JOptionPane.showConfirmDialog(null, panel, "Select item sets to remove", OK_CANCEL_OPTION, PLAIN_MESSAGE);
-      if (result == OK_OPTION) {
-          List list = itemSetList.getSelectedValuesList();
-          for (Object item : list) {
-              for (Repo repo : repoMan.getRepos()) {
-                  if (repo.containsItemSet(Long.valueOf(item.toString().substring(0, item.toString().indexOf(":"))))) {
-                      repo.removeSet(Long.valueOf(item.toString().substring(0, item.toString().indexOf(":"))));
-                  }
-              }
-              itemMan.removeItemSet(Long.valueOf(item.toString().substring(0, item.toString().indexOf(":"))));
+    panel.add(pane);
+    int result = JOptionPane.showConfirmDialog(null, panel, "Select item sets to remove", OK_CANCEL_OPTION, PLAIN_MESSAGE);
+    if (result == OK_OPTION) {
+      List list = itemSetList.getSelectedValuesList();
+      String repos = "";
+      for (Object item : list) {
+        for (Repo repo : repoMan.getRepos()) {
+          if (repo.containsItemSet(Long.valueOf(item.toString().substring(0, item.toString().indexOf(":"))))) {
+            repos += repo.getDescription() + "\n";
+            repo.removeSet(Long.valueOf(item.toString().substring(0, item.toString().indexOf(":"))));
           }
-          hasChanged = true;
-          refreshMenuItemActionPerformed(evt);
+        }
+        JOptionPane.showMessageDialog(itemSetList, "The item set was removed from the following repos:\n" + repos, "Item set was removed", INFORMATION_MESSAGE);
+        itemMan.removeItemSet(Long.valueOf(item.toString().substring(0, item.toString().indexOf(":"))));
       }
+      hasChanged = true;
+      refreshMenuItemActionPerformed(evt);
+    }
   }//GEN-LAST:event_removeItemSetMenuItemActionPerformed
 
   private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
-      if (jRadioButtonMenuItem1.isSelected()) {
-          sortRepo = true;
-      } else {
-          sortRepo = false;
-      }
+    if (jRadioButtonMenuItem1.isSelected()) {
+      sortRepo = true;
+    } else {
+      sortRepo = false;
+    }
   }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
     private void windowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_windowClosing
-        quitMenuItemActionPerformed(null);
+      quitMenuItemActionPerformed(null);
     }//GEN-LAST:event_windowClosing
 
     private void addItemMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemMenuItemActionPerformed
-        //popup with field to add an item with
-        double price = 0;
-        long id = 0;
-        String desc = "";
-        boolean idUsed = false;
+      //popup with field to add an item with
+      double price = 0;
+      long id = 0;
+      String desc = "";
+      boolean idUsed = false;
 
-        NumberFormat numberFormat = NumberFormat.getIntegerInstance();
-        NumberFormat priceFormat = NumberFormat.getNumberInstance();
-        priceFormat.setMaximumFractionDigits(2);
-        priceFormat.setMinimumFractionDigits(2);
+      NumberFormat numberFormat = NumberFormat.getIntegerInstance();
+      NumberFormat priceFormat = NumberFormat.getNumberInstance();
+      priceFormat.setMaximumFractionDigits(2);
+      priceFormat.setMinimumFractionDigits(2);
 
-        JFormattedTextField descField = new JFormattedTextField();
-        JFormattedTextField idField = new JFormattedTextField(numberFormat);
-        JFormattedTextField priceField = new JFormattedTextField(priceFormat);
+      JFormattedTextField descField = new JFormattedTextField();
+      JFormattedTextField idField = new JFormattedTextField(numberFormat);
+      JFormattedTextField priceField = new JFormattedTextField(priceFormat);
 
-        JPanel panel = new JPanel(new GridLayout(0, 1));
-        panel.add(new JLabel("Description: "));
-        panel.add(descField);
-        panel.add(new JLabel("ID: "));
-        panel.add(idField);
-        panel.add(new JLabel("Price (£): "));
-        panel.add(priceField);
-        int result = JOptionPane.showConfirmDialog(null, panel, "Add a new item", OK_CANCEL_OPTION, PLAIN_MESSAGE);
-        if (result == OK_OPTION) {
-            if (priceField.getValue().getClass().getName().equals("java.lang.Long")) {
-                price = (long) priceField.getValue();
-            } else {
-                price = (double) priceField.getValue();
-            }
-            for (Item item : itemMan.getItems()) {
-                if ((long) idField.getValue() == item.getId()) {
-                    idUsed = true;
-                    JOptionPane.showMessageDialog(this, "An item with this ID already exists", "Already exists", ERROR_MESSAGE);
-                    break;
-                }
-            }
-            if (!idUsed) {
-                itemMan.addItem((long) idField.getValue(), descField.getText(), price);
-                itemMan.sortItems();
-                hasChanged = true;
-                refreshMenuItemActionPerformed(evt);
-            }
-
+      JPanel panel = new JPanel(new GridLayout(0, 1));
+      panel.add(new JLabel("Description: "));
+      panel.add(descField);
+      panel.add(new JLabel("ID: "));
+      panel.add(idField);
+      panel.add(new JLabel("Price (£): "));
+      panel.add(priceField);
+      int result = JOptionPane.showConfirmDialog(null, panel, "Add a new item", OK_CANCEL_OPTION, PLAIN_MESSAGE);
+      if (result == OK_OPTION) {
+        if (priceField.getValue().getClass().getName().equals("java.lang.Long")) {
+          price = (long) priceField.getValue();
+        } else {
+          price = (double) priceField.getValue();
         }
+        for (Item item : itemMan.getItems()) {
+          if ((long) idField.getValue() == item.getId()) {
+            idUsed = true;
+            JOptionPane.showMessageDialog(this, "An item with this ID already exists", "Already exists", ERROR_MESSAGE);
+            break;
+          }
+        }
+        if (!idUsed) {
+          itemMan.addItem((long) idField.getValue(), descField.getText(), price);
+          itemMan.sortItems();
+          hasChanged = true;
+          refreshMenuItemActionPerformed(evt);
+        }
+
+      }
     }//GEN-LAST:event_addItemMenuItemActionPerformed
 
-    private void addItemSetManager(javax.swing.JTree tree) {
-        if (tree.getSelectionPath().getPathCount() == 1) {
-            addItemSetMenuItemActionPerformed(null);
-            manageItemSetsMenuItemActionPerformed(null);
-            hasChanged = true;
-        } else if (tree.getSelectionPath().getPathCount() == 3) {
-            fromItemSet = true;
-            jMenuItem1ActionPerformed(null);
-            hasChanged = true;
-        }
-
+  private void addItemSetManager(javax.swing.JTree tree) {
+    if (tree.getSelectionPath().getPathCount() == 1) {
+      addItemSetMenuItemActionPerformed(null);
+      manageItemSetsMenuItemActionPerformed(null);
+      hasChanged = true;
+    } else if (tree.getSelectionPath().getPathCount() == 3) {
+      fromItemSet = true;
+      jMenuItem1ActionPerformed(null);
+      hasChanged = true;
     }
 
-    private void removeItemSetManager(javax.swing.JTree tree) {
-        if (tree.getSelectionPath().getPathCount() == 1) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all item sets?", "Remove all item sets?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                itemMan.getItemSets().clear();
-                for (Repo repo : repoMan.getRepos()) {
-                    repo.getItemSets().clear();
-                }
-                manageItemSetsMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getPathCount() == 2) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove the " + tree.getSelectionPath().getLastPathComponent().toString() + " item set?", "Remove this item set?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                for (Repo repo : repoMan.getRepos()) {
-                    if (repo.containsItemSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()))) {
-                        repo.removeSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
-                    }
-                }
-                itemMan.removeItemSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
-                manageItemSetsMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 3) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the items from the " + tree.getSelectionPath().getPathComponent(1).toString() + " set", "Remove all items from this set?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                itemMan.getItemSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().clear();
-                manageItemSetsMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getLastPathComponent().toString().contains("£") && tree.getSelectionPath().getPathCount() == 3) {
+  }
 
-        } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("[0-9]+") && tree.getSelectionPath().getPathCount() == 3) {
-
-        } else if (tree.getSelectionPath().getPathCount() == 4) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove the item " + tree.getSelectionPath().getLastPathComponent().toString() + " from the " + tree.getSelectionPath().getPathComponent(1).toString() + " set?", "Remove this item from this set?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                if (replaceItemsRadioButton.isSelected()) {
-                    itemMan.findAnother(itemMan.getItem(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString())), Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString()));
-                }
-                itemMan.getItemSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).removeItem(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
-
-                manageItemSetsMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
+  private void removeItemSetManager(javax.swing.JTree tree) {
+    if (tree.getSelectionPath().getPathCount() == 1) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all item sets?", "Remove all item sets?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        itemMan.getItemSets().clear();
+        for (Repo repo : repoMan.getRepos()) {
+          repo.getItemSets().clear();
         }
+        manageItemSetsMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getPathCount() == 2) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove the " + tree.getSelectionPath().getLastPathComponent().toString() + " item set?", "Remove this item set?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        String repos = "";
+        for (Repo repo : repoMan.getRepos()) {
+          if (repo.containsItemSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()))) {
+            repos += repo.getDescription() + "\n";
+            repo.removeSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
+          }
+        }
+        JOptionPane.showMessageDialog(manageItemSetsFrame, "The item set was removed from the following repos:\n" + repos, "The Item set was removed", INFORMATION_MESSAGE);
+        itemMan.removeItemSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
+        manageItemSetsMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 3) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the items from the " + tree.getSelectionPath().getPathComponent(1).toString() + " set", "Remove all items from this set?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        itemMan.getItemSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().clear();
+        manageItemSetsMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getLastPathComponent().toString().contains("£") && tree.getSelectionPath().getPathCount() == 3) {
 
+    } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("[0-9]+") && tree.getSelectionPath().getPathCount() == 3) {
+
+    } else if (tree.getSelectionPath().getPathCount() == 4) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove the item " + tree.getSelectionPath().getLastPathComponent().toString() + " from the " + tree.getSelectionPath().getPathComponent(1).toString() + " set?", "Remove this item from this set?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        if (replaceItemsRadioButton.isSelected()) {
+          JOptionPane.showMessageDialog(manageItemsRootPanel, "The item will be replaced with: " + itemMan.findAnother(itemMan.getItem(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString())), Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())), "The item will be replaced", INFORMATION_MESSAGE);
+        }
+        itemMan.getItemSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).removeItem(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
+
+        manageItemSetsMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
     }
 
-    private void addRepoManager(javax.swing.JTree tree) {
-        if (tree.getSelectionPath().getLastPathComponent().toString().equals("Repositories")) {
-            addRepoMenuItemActionPerformed(null);
-            manageReposMenuItemActionPerformed(null);
-        } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Item Sets \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 3) {
-            fromRepo = true;
-            manageItemSetsMenuItemActionPerformed(null);
-            hasChanged = true;
-        } else if (tree.getSelectionPath().getPathCount() == 3 && tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)")) {
-            fromRepoItem = true;
-            jMenuItem1ActionPerformed(null);
-            hasChanged = true;
-        }
+  }
 
+  private void addRepoManager(javax.swing.JTree tree) {
+    if (tree.getSelectionPath().getLastPathComponent().toString().equals("Repositories")) {
+      addRepoMenuItemActionPerformed(null);
+      manageReposMenuItemActionPerformed(null);
+    } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Item Sets \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 3) {
+      fromRepo = true;
+      manageItemSetsMenuItemActionPerformed(null);
+      hasChanged = true;
+    } else if (tree.getSelectionPath().getPathCount() == 3 && tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)")) {
+      fromRepoItem = true;
+      jMenuItem1ActionPerformed(null);
+      hasChanged = true;
     }
 
-    private void removeRepoManager(javax.swing.JTree tree) {
-        if (tree.getSelectionPath().getPathCount() == 1) {
-            int result = JOptionPane.showConfirmDialog(manageReposFrame, "Do you wish to remove all repositories?", "Remove all repositories?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                repoMan.getRepos().clear();
-                manageReposMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getPathCount() == 2) {
-            int result = JOptionPane.showConfirmDialog(manageReposFrame, "Do you wish to remove the " + tree.getSelectionPath().getLastPathComponent().toString() + " repository?", "Remove this repository?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                repoMan.removeRepo(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
-                manageReposMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Item Sets \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 3) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the item sets from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repository", "Remove all item sets from this repository?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItemSets().clear();
-                manageReposMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 3) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the items from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repository", "Remove all item sets from this repository?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().clear();
-                manageReposMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getPathCount() == 4 && tree.getSelectionPath().getParentPath().getLastPathComponent().toString().matches("Item Sets \\(" + "[0-9]+" + "\\)")) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove the " + tree.getSelectionPath().getLastPathComponent().toString() + " item set from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repository", "Remove all item sets from this repository?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).removeSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
-                manageReposMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
+  }
 
-        } else if (tree.getSelectionPath().getPathCount() == 4 && tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)")) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the items from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repository", "Remove all items from this repository?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().clear();
-                manageReposMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 5) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the items from the " + tree.getSelectionPath().getPathComponent(3).toString() + " set", "Remove all items from this set?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItemSets().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(3), 0).toString())).getItems().clear();
-                manageReposMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getParentPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 4) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to the item: " + tree.getSelectionPath().getLastPathComponent().toString() + " from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repo", "Remove this item from this repo?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).removeItem(repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(3), 0).toString())).getId());
-                manageReposMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        } else if (tree.getSelectionPath().getPathCount() == 6) {
-            int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove the item " + tree.getSelectionPath().getLastPathComponent().toString() + " from the " + tree.getSelectionPath().getPathComponent(3).toString() + " set?", "Remove this item from this set?", YES_NO_OPTION, WARNING_MESSAGE);
-            if (result == YES_OPTION) {
-                repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItemSets().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(3), 0).toString())).removeItem(repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItemSets().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(3), 0).toString())).getItems().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString())).getId());
-                manageReposMenuItemActionPerformed(null);
-                hasChanged = true;
-            }
-        }
+  private void removeRepoManager(javax.swing.JTree tree) {
+    if (tree.getSelectionPath().getPathCount() == 1) {
+      int result = JOptionPane.showConfirmDialog(manageReposFrame, "Do you wish to remove all repositories?", "Remove all repositories?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        repoMan.getRepos().clear();
+        manageReposMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getPathCount() == 2) {
+      int result = JOptionPane.showConfirmDialog(manageReposFrame, "Do you wish to remove the " + tree.getSelectionPath().getLastPathComponent().toString() + " repository?", "Remove this repository?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        repoMan.removeRepo(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
+        manageReposMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Item Sets \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 3) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the item sets from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repository", "Remove all item sets from this repository?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItemSets().clear();
+        manageReposMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 3) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the items from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repository", "Remove all item sets from this repository?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().clear();
+        manageReposMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getPathCount() == 4 && tree.getSelectionPath().getParentPath().getLastPathComponent().toString().matches("Item Sets \\(" + "[0-9]+" + "\\)")) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove the " + tree.getSelectionPath().getLastPathComponent().toString() + " item set from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repository", "Remove all item sets from this repository?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).removeSet(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString()));
+        manageReposMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+
+    } else if (tree.getSelectionPath().getPathCount() == 4 && tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)")) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the items from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repository", "Remove all items from this repository?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().clear();
+        manageReposMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 5) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove all the items from the " + tree.getSelectionPath().getPathComponent(3).toString() + " set", "Remove all items from this set?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItemSets().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(3), 0).toString())).getItems().clear();
+        manageReposMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getParentPath().getLastPathComponent().toString().matches("Items \\(" + "[0-9]+" + "\\)") && tree.getSelectionPath().getPathCount() == 4) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to the item: " + tree.getSelectionPath().getLastPathComponent().toString() + " from the " + tree.getSelectionPath().getPathComponent(1).toString() + " repo", "Remove this item from this repo?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).removeItem(repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItems().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(3), 0).toString())).getId());
+        manageReposMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
+    } else if (tree.getSelectionPath().getPathCount() == 6) {
+      int result = JOptionPane.showConfirmDialog(manageItemSetsFrame, "Do you wish to remove the item " + tree.getSelectionPath().getLastPathComponent().toString() + " from the " + tree.getSelectionPath().getPathComponent(3).toString() + " set?", "Remove this item from this set?", YES_NO_OPTION, WARNING_MESSAGE);
+      if (result == YES_OPTION) {
+        repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItemSets().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(3), 0).toString())).removeItem(repoMan.getRepos().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(1), 0).toString())).getItemSets().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getPathComponent(3), 0).toString())).getItems().get(Long.valueOf(tree.getModel().getChild(tree.getSelectionPath().getLastPathComponent(), 0).toString())).getId());
+        manageReposMenuItemActionPerformed(null);
+        hasChanged = true;
+      }
     }
+  }
 
-    private int savePopup() {
-        int result = JOptionPane.showConfirmDialog(rootPane, "Changes have been made since the last save, do you want to save?", "Changes have been made", YES_NO_CANCEL_OPTION);
-        if (result == YES_OPTION) {
-            saveAsMenuItemActionPerformed(null);
-            if (hasChanged) {
-                return CANCEL_OPTION;
-            }
-        }
-        if (result == CANCEL_OPTION) {
-            return result;
-        }
-        return 100;
+  private int savePopup() {
+    int result = JOptionPane.showConfirmDialog(rootPane, "Changes have been made since the last save, do you want to save?", "Changes have been made", YES_NO_CANCEL_OPTION);
+    if (result == YES_OPTION) {
+      saveAsMenuItemActionPerformed(null);
+      if (hasChanged) {
+        return CANCEL_OPTION;
+      }
     }
+    if (result == CANCEL_OPTION) {
+      return result;
+    }
+    return 100;
+  }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+  /**
+   * @param args the command line arguments
+   */
+  public static void main(String args[]) {
+    /* Set the Nimbus look and feel */
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+     * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+     */
+    try {
+      for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+        if ("Nimbus".equals(info.getName())) {
+          javax.swing.UIManager.setLookAndFeel(info.getClassName());
+          break;
 
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GUI().setVisible(true);
-            }
-        });
+      }
+    } catch (ClassNotFoundException ex) {
+      java.util.logging.Logger.getLogger(GUI.class
+              .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (InstantiationException ex) {
+      java.util.logging.Logger.getLogger(GUI.class
+              .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (IllegalAccessException ex) {
+      java.util.logging.Logger.getLogger(GUI.class
+              .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+      java.util.logging.Logger.getLogger(GUI.class
+              .getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
-    // <editor-fold defaultstate="collapsed" desc=" Variables ">
-    FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV File", "csv");
-    JFileChooser choose = new JFileChooser();
-    MouseListener popupListener = new PopupListener();
+    //</editor-fold>
 
-    String nextLine;
-    File loadFile, saveFile;
-    BufferedReader fileReader = null;
-    FileWriter fileWriter = null;
-    ArrayList<String[]> dataLine = new ArrayList<>();
-    ArrayList<String[]> setsLine = new ArrayList<>();
-    ArrayList<String[]> repoLine = new ArrayList<>();
-    boolean hasChanged = false;
-    ItemManager itemMan = new ItemManager();
-    RepoManager repoMan = new RepoManager();
+    /* Create and display the form */
+    java.awt.EventQueue.invokeLater(new Runnable() {
+      public void run() {
+        new GUI().setVisible(true);
+      }
+    });
+  }
+  // <editor-fold defaultstate="collapsed" desc=" Variables ">
+  FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV File", "csv");
+  JFileChooser choose = new JFileChooser();
+  MouseListener popupListener = new PopupListener();
 
-    JFrame manageItemSetsFrame, manageItemsFrame, manageReposFrame;
-    JPopupMenu popup = new JPopupMenu();
-    private javax.swing.JList itemRemoveList, repoList, itemManList, itemSetList;
-    private javax.swing.JTree rootTree, repoTree, setItems;
-    javax.swing.tree.DefaultMutableTreeNode rootNode;
-    javax.swing.tree.DefaultMutableTreeNode allNode = new javax.swing.tree.DefaultMutableTreeNode("All");
-    javax.swing.tree.DefaultMutableTreeNode repoNode = new javax.swing.tree.DefaultMutableTreeNode("Repositories (" + repoMan.getRepos().size() + ")");
-    javax.swing.tree.DefaultMutableTreeNode itemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + itemMan.getItems().size() + ")");
-    javax.swing.tree.DefaultMutableTreeNode itemSetNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets (" + itemMan.getItemSets().size() + ")");
-    GroupLayout manageSetsRootPanelLayout, manageItemsRootPanelLayout, manageReposRootPanelLayout;
-    JScrollPane manageItemsPane, manageSetsPane, manageReposPane;
-    JButton addItemSetButton, removeItemSetButton, removeRepoButton, addRepoButton, addItemButton, removeItemButton, itemOkButton, setOkButton;
-    JPanel manageSetsRootPanel, manageItemsRootPanel, manageReposRootPanel;
-    boolean isItemsCreated = false;
-    boolean isSetsCreated = false;
-    boolean isReposCreated = false;
-    boolean fromItemSet = false;
-    boolean fromRepo = false;
-    boolean fromRepoItem = false;
-    boolean sortRepo = true;
+  String nextLine;
+  File loadFile, saveFile;
+  BufferedReader fileReader = null;
+  FileWriter fileWriter = null;
+  ArrayList<String[]> dataLine = new ArrayList<>();
+  ArrayList<String[]> setsLine = new ArrayList<>();
+  ArrayList<String[]> repoLine = new ArrayList<>();
+  boolean hasChanged = false;
+  ItemManager itemMan = new ItemManager();
+  RepoManager repoMan = new RepoManager();
+
+  JFrame manageItemSetsFrame, manageItemsFrame, manageReposFrame;
+  JPopupMenu popup = new JPopupMenu();
+  private javax.swing.JList itemRemoveList, repoList, itemManList, itemSetList;
+  private javax.swing.JTree rootTree, repoTree, setItems;
+  javax.swing.tree.DefaultMutableTreeNode rootNode;
+  javax.swing.tree.DefaultMutableTreeNode allNode = new javax.swing.tree.DefaultMutableTreeNode("All");
+  javax.swing.tree.DefaultMutableTreeNode repoNode = new javax.swing.tree.DefaultMutableTreeNode("Repositories (" + repoMan.getRepos().size() + ")");
+  javax.swing.tree.DefaultMutableTreeNode itemsNode = new javax.swing.tree.DefaultMutableTreeNode("Items (" + itemMan.getItems().size() + ")");
+  javax.swing.tree.DefaultMutableTreeNode itemSetNode = new javax.swing.tree.DefaultMutableTreeNode("Item Sets (" + itemMan.getItemSets().size() + ")");
+  GroupLayout manageSetsRootPanelLayout, manageItemsRootPanelLayout, manageReposRootPanelLayout;
+  JScrollPane manageItemsPane, manageSetsPane, manageReposPane;
+  JButton addItemSetButton, removeItemSetButton, removeRepoButton, addRepoButton, addItemButton, removeItemButton, itemOkButton, setOkButton;
+  JPanel manageSetsRootPanel, manageItemsRootPanel, manageReposRootPanel;
+  boolean isItemsCreated = false;
+  boolean isSetsCreated = false;
+  boolean isReposCreated = false;
+  boolean fromItemSet = false;
+  boolean fromRepo = false;
+  boolean fromRepoItem = false;
+  boolean sortRepo = true;
 // </editor-fold>
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem addItemMenuItem;
@@ -1556,16 +1572,16 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
 
-    private class PopupListener extends MouseAdapter {
+  private class PopupListener extends MouseAdapter {
 
-        public void mouseReleased(MouseEvent e) {
-            showPopup(e);
-        }
-
-        private void showPopup(MouseEvent e) {
-            if (e.isPopupTrigger()) {
-                popup.show(e.getComponent(), e.getX(), e.getY());
-            }
-        }
+    public void mouseReleased(MouseEvent e) {
+      showPopup(e);
     }
+
+    private void showPopup(MouseEvent e) {
+      if (e.isPopupTrigger()) {
+        popup.show(e.getComponent(), e.getX(), e.getY());
+      }
+    }
+  }
 }
