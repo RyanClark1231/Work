@@ -1,5 +1,7 @@
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JSpinner;
@@ -9,7 +11,6 @@ import javax.swing.JSpinner;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Ryan
@@ -53,45 +54,46 @@ public class GUI extends javax.swing.JFrame {
     jLabel9 = new javax.swing.JLabel();
     rDispersionField = new javax.swing.JSpinner();
     jLabel10 = new javax.swing.JLabel();
-    rTimestampField = new javax.swing.JSpinner();
     jLabel11 = new javax.swing.JLabel();
     jSpinner1 = new javax.swing.JSpinner();
     jLabel12 = new javax.swing.JLabel();
-    oTimestampField = new javax.swing.JSpinner();
     jLabel13 = new javax.swing.JLabel();
-    reTimestampField = new javax.swing.JSpinner();
     jLabel14 = new javax.swing.JLabel();
-    trTimestampField = new javax.swing.JSpinner();
     Send = new javax.swing.JButton();
+    origTimestamp = new javax.swing.JTextField();
+    refTimestamp = new javax.swing.JTextField();
+    recTimestamp = new javax.swing.JTextField();
+    tranTimestamp = new javax.swing.JTextField();
     jPanel2 = new javax.swing.JPanel();
     jLabel15 = new javax.swing.JLabel();
-    jComboBox2 = new javax.swing.JComboBox();
     jLabel16 = new javax.swing.JLabel();
     jLabel17 = new javax.swing.JLabel();
     jLabel18 = new javax.swing.JLabel();
     jLabel19 = new javax.swing.JLabel();
     jLabel20 = new javax.swing.JLabel();
     jLabel21 = new javax.swing.JLabel();
-    liField1 = new javax.swing.JSpinner();
-    vNoField1 = new javax.swing.JSpinner();
-    modeField1 = new javax.swing.JSpinner();
-    stratumField1 = new javax.swing.JSpinner();
-    pollField1 = new javax.swing.JSpinner();
     jLabel22 = new javax.swing.JLabel();
-    rDelayField1 = new javax.swing.JSpinner();
     jLabel23 = new javax.swing.JLabel();
-    rDispersionField1 = new javax.swing.JSpinner();
     jLabel24 = new javax.swing.JLabel();
-    rTimestampField1 = new javax.swing.JSpinner();
     jLabel25 = new javax.swing.JLabel();
-    rIdentifierField1 = new javax.swing.JSpinner();
     jLabel26 = new javax.swing.JLabel();
-    oTimestampField1 = new javax.swing.JSpinner();
     jLabel27 = new javax.swing.JLabel();
-    reTimestampField1 = new javax.swing.JSpinner();
     jLabel28 = new javax.swing.JLabel();
-    trTimestampField1 = new javax.swing.JSpinner();
+    origTimestamp1 = new javax.swing.JTextField();
+    refTimestamp1 = new javax.swing.JTextField();
+    recTimestamp1 = new javax.swing.JTextField();
+    tranTimestamp1 = new javax.swing.JTextField();
+    liField1 = new javax.swing.JTextField();
+    vNoField1 = new javax.swing.JTextField();
+    modeField1 = new javax.swing.JTextField();
+    stratumField1 = new javax.swing.JTextField();
+    pollField1 = new javax.swing.JTextField();
     precisionField1 = new javax.swing.JTextField();
+    rootDelayField1 = new javax.swing.JTextField();
+    rootDisField1 = new javax.swing.JTextField();
+    refIdField1 = new javax.swing.JTextField();
+    ntpServText = new javax.swing.JTextField();
+    sendButton1 = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,27 +147,15 @@ public class GUI extends javax.swing.JFrame {
 
     jLabel10.setText("Reference Identifier");
 
-    rTimestampField.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, null, java.util.Calendar.HOUR));
-    rTimestampField.setEnabled(false);
-
     jLabel11.setText("Reference Timestamp");
 
     jSpinner1.setEnabled(false);
 
     jLabel12.setText("Originate Timestamp");
 
-    oTimestampField.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, null, java.util.Calendar.HOUR));
-    oTimestampField.setEnabled(false);
-
     jLabel13.setText("Recieve Timestamp");
 
-    reTimestampField.setModel(new javax.swing.SpinnerNumberModel(Byte.valueOf((byte)0), null, null, Byte.valueOf((byte)1)));
-    reTimestampField.setEnabled(false);
-
     jLabel14.setText("Transmit Timestamp");
-
-    trTimestampField.setModel(new javax.swing.SpinnerDateModel());
-    trTimestampField.setEditor(new JSpinner.DefaultEditor(trTimestampField));
 
     Send.setText("Send");
     Send.addActionListener(new java.awt.event.ActionListener() {
@@ -174,68 +164,76 @@ public class GUI extends javax.swing.JFrame {
       }
     });
 
+    origTimestamp.setEditable(false);
+    origTimestamp.setBackground(new java.awt.Color(204, 204, 204));
+
+    refTimestamp.setEditable(false);
+    refTimestamp.setBackground(new java.awt.Color(204, 204, 204));
+
+    recTimestamp.setEditable(false);
+    recTimestamp.setBackground(new java.awt.Color(204, 204, 204));
+
+    tranTimestamp.setEditable(false);
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(Send)
+        .addGap(34, 34, 34))
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addComponent(rTimestampField, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE))
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(liField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel2))
-            .addGap(18, 18, 18)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel3)
-              .addComponent(vNoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(18, 18, 18)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel4)
-              .addComponent(modeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jLabel8)
+          .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+            .addComponent(rDelayField, javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(rDispersionField, javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+          .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel10)
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+              .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(tranTimestamp, javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(recTimestamp, javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(refTimestamp, javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(origTimestamp)
+              .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(liField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel3)
+                  .addComponent(vNoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel4)
+                  .addComponent(modeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGap(40, 40, 40)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jLabel5)
               .addComponent(stratumField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(48, 48, 48)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(pollField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel6))
-            .addContainerGap(128, Short.MAX_VALUE))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addComponent(jLabel8)
-              .addComponent(jLabel11)
-              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                .addComponent(rDelayField, javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(rDispersionField, javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-              .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel10)
-              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                .addComponent(trTimestampField, javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                .addComponent(oTimestampField, javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(reTimestampField, javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-              .addComponent(jLabel12))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel7)
-              .addComponent(precisionField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(25, 25, 25))))
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(Send)
-        .addGap(34, 34, 34))
+                .addComponent(pollField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(precisionField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel6)
+                .addGap(59, 59, 59)
+                .addComponent(jLabel7)))))
+        .addGap(25, 55, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,20 +273,20 @@ public class GUI extends javax.swing.JFrame {
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jLabel11)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(rTimestampField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(refTimestamp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addComponent(jLabel12)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(oTimestampField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(origTimestamp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jLabel13)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(reTimestampField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGap(1, 1, 1)
+        .addComponent(recTimestamp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addComponent(jLabel14)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(trTimestampField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+        .addComponent(tranTimestamp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
         .addComponent(Send)
         .addContainerGap())
     );
@@ -296,8 +294,6 @@ public class GUI extends javax.swing.JFrame {
     jTabbedPane1.addTab("Send", jPanel1);
 
     jLabel15.setText("NTP Sever");
-
-    jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0.uk.pool.ntp.org", "1.uk.pool.ntp.org", "2.uk.pool.ntp.org", "3.uk.pool.ntp.org", "ntp.uwe.ac.uk", "localhost" }));
 
     jLabel16.setText("LI");
 
@@ -311,58 +307,54 @@ public class GUI extends javax.swing.JFrame {
 
     jLabel21.setText("Precision");
 
-    liField1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 3, 1));
-    liField1.setAutoscrolls(true);
-    liField1.setEditor(new JSpinner.DefaultEditor(liField1));
-
-    vNoField1.setModel(new javax.swing.SpinnerNumberModel(3, 3, 4, 1));
-    vNoField1.setEditor(new JSpinner.DefaultEditor(vNoField1));
-
-    modeField1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 7, 1));
-    modeField1.setEditor(new JSpinner.DefaultEditor(modeField1));
-
-    stratumField1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 255, 1));
-    stratumField1.setEditor(new JSpinner.DefaultEditor(stratumField1));
-
-    pollField1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 255, 1));
-    pollField1.setEditor(new JSpinner.DefaultEditor(pollField1));
-
     jLabel22.setText("Root Delay");
-
-    rDelayField1.setModel(new javax.swing.SpinnerNumberModel(Double.valueOf(0.0d), null, null, Double.valueOf(1.0d)));
-    rDelayField1.setEditor(new JSpinner.DefaultEditor(rDelayField1));
 
     jLabel23.setText("Root Dispersion");
 
-    rDispersionField1.setModel(new javax.swing.SpinnerNumberModel(Double.valueOf(0.0d), null, null, Double.valueOf(1.0d)));
-    rDispersionField1.setEditor(new JSpinner.DefaultEditor(rDispersionField1));
-
     jLabel24.setText("Reference Identifier");
-
-    rTimestampField1.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, null, java.util.Calendar.HOUR));
-    rTimestampField1.setEditor(new JSpinner.DefaultEditor(rTimestampField1));
 
     jLabel25.setText("Reference Timestamp");
 
-    rIdentifierField1.setEditor(new JSpinner.DefaultEditor(rIdentifierField1));
-
     jLabel26.setText("Originate Timestamp");
-
-    oTimestampField1.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, null, java.util.Calendar.HOUR));
-    oTimestampField1.setEditor(new JSpinner.DefaultEditor(oTimestampField1));
 
     jLabel27.setText("Recieve Timestamp");
 
-    reTimestampField1.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, null, java.util.Calendar.HOUR));
-    reTimestampField1.setEditor(new JSpinner.DefaultEditor(reTimestampField1));
-
     jLabel28.setText("Transmit Timestamp");
 
-    trTimestampField1.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, null, java.util.Calendar.HOUR));
-    trTimestampField1.setEditor(new JSpinner.DefaultEditor(trTimestampField1));
+    origTimestamp1.setEditable(false);
+
+    refTimestamp1.setEditable(false);
+
+    recTimestamp1.setEditable(false);
+
+    tranTimestamp1.setEditable(false);
+
+    liField1.setEditable(false);
+
+    vNoField1.setEditable(false);
+
+    modeField1.setEditable(false);
+
+    stratumField1.setEditable(false);
+
+    pollField1.setEditable(false);
 
     precisionField1.setEditable(false);
-    precisionField1.setText("0");
+
+    rootDelayField1.setEditable(false);
+
+    rootDisField1.setEditable(false);
+
+    refIdField1.setEditable(false);
+
+    ntpServText.setEditable(false);
+
+    sendButton1.setText("Send");
+    sendButton1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        sendButton1ActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
@@ -371,54 +363,56 @@ public class GUI extends javax.swing.JFrame {
       .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addComponent(jLabel15)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addComponent(jLabel22)
-          .addComponent(jLabel25)
-          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-            .addComponent(rDelayField1, javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rDispersionField1, javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-            .addComponent(rTimestampField1, javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-            .addComponent(reTimestampField1, javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(oTimestampField1, javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-            .addComponent(trTimestampField1, javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-            .addComponent(rIdentifierField1, javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+          .addComponent(rootDelayField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(rootDisField1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(refIdField1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addGroup(jPanel2Layout.createSequentialGroup()
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(liField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel16))
-            .addGap(18, 18, 18)
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ntpServText, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(jLabel22)
+              .addComponent(jLabel23)
+              .addComponent(jLabel24)
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(jLabel16)
+                    .addGap(56, 56, 56))
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(liField1)
+                    .addGap(12, 12, 12)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                  .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                  .addComponent(vNoField1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel18)
+                  .addComponent(modeField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel19)
+                  .addComponent(stratumField1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel20)
+                  .addComponent(pollField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGap(10, 10, 10)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel17)
-              .addComponent(vNoField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(18, 18, 18)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel18)
-              .addComponent(modeField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(42, 42, 42)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel19)
-              .addComponent(stratumField1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(44, 44, 44)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(pollField1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel20))))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(precisionField1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jLabel21))
-        .addGap(26, 26, 26))
+              .addComponent(jLabel21)
+              .addComponent(precisionField1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(sendButton1)))
+          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+            .addComponent(tranTimestamp1, javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(recTimestamp1, javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(origTimestamp1, javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(refTimestamp1, javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)))
+        .addGap(0, 48, Short.MAX_VALUE))
     );
     jPanel2Layout.setVerticalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -426,7 +420,7 @@ public class GUI extends javax.swing.JFrame {
         .addContainerGap()
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel15)
-          .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(ntpServText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(31, 31, 31)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel16)
@@ -446,32 +440,34 @@ public class GUI extends javax.swing.JFrame {
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addComponent(jLabel22)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(rDelayField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(rootDelayField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jLabel23)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(rDispersionField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addComponent(rootDisField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(14, 14, 14)
         .addComponent(jLabel24)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(rIdentifierField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(refIdField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jLabel25)
-        .addGap(12, 12, 12)
-        .addComponent(rTimestampField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGap(1, 1, 1)
+        .addComponent(refTimestamp1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addComponent(jLabel26)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(oTimestampField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(origTimestamp1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jLabel27)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(reTimestampField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGap(1, 1, 1)
+        .addComponent(recTimestamp1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addComponent(jLabel28)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(trTimestampField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(36, Short.MAX_VALUE))
+        .addComponent(tranTimestamp1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(sendButton1)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     jTabbedPane1.addTab("Recieve", jPanel2);
@@ -491,28 +487,61 @@ public class GUI extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void SendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendActionPerformed
-    cli = new Client((Integer )vNoField.getValue(),(Integer) modeField.getValue());
+
+    cli = new Client((Integer) vNoField.getValue(), (Integer) modeField.getValue(), (String) jComboBox1.getSelectedItem());
+
     try {
       reciever = new Reciever(cli.getSock());
     } catch (IOException ex) {
-      
+
     }
-    
-    liField1.setValue(reciever.getLeapIndicator());
-    modeField1.setValue(reciever.getMode());
-    vNoField1.setValue(reciever.getvNo());
-    stratumField1.setValue(reciever.getStratum());
-    pollField1.setValue(reciever.getPoll());
+    //set values in send
+    tranTimestamp.setText(reciever.getOriginateTimestamp());
+    //set values in reciever
+    ntpServText.setText((String) jComboBox1.getSelectedItem());
+    liField1.setText(reciever.getLeapIndicator() + "");
+    modeField1.setText(reciever.getMode() + "");
+    vNoField1.setText(reciever.getvNo() + "");
+    stratumField1.setText(reciever.getStratum() + "");
+    pollField1.setText(reciever.getPoll() + "");
     precisionField1.setText(reciever.getPrecision());
-    
+    refTimestamp1.setText(reciever.getReferenceTimestamp());
+    origTimestamp1.setText(reciever.getOriginateTimestamp());
+    recTimestamp1.setText(reciever.getRecieveTimestamp());
+    tranTimestamp1.setText(reciever.getTransmitTimestamp());
+
   }//GEN-LAST:event_SendActionPerformed
+
+  private void sendButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendButton1ActionPerformed
+    cli = new Client((Integer) vNoField.getValue(), (Integer) modeField.getValue(), (String) jComboBox1.getSelectedItem());
+
+    try {
+      reciever = new Reciever(cli.getSock());
+    } catch (IOException ex) {
+
+    }
+    //set values in send
+    tranTimestamp.setText(reciever.getOriginateTimestamp());
+    //set values in reciever
+    ntpServText.setText((String) jComboBox1.getSelectedItem());
+    liField1.setText(reciever.getLeapIndicator() + "");
+    modeField1.setText(reciever.getMode() + "");
+    vNoField1.setText(reciever.getvNo() + "");
+    stratumField1.setText(reciever.getStratum() + "");
+    pollField1.setText(reciever.getPoll() + "");
+    precisionField1.setText(reciever.getPrecision());
+    refTimestamp1.setText(reciever.getReferenceTimestamp());
+    origTimestamp1.setText(reciever.getOriginateTimestamp());
+    recTimestamp1.setText(reciever.getRecieveTimestamp());
+    tranTimestamp1.setText(reciever.getTransmitTimestamp());
+  }//GEN-LAST:event_sendButton1ActionPerformed
 
   /**
    * @param args the command line arguments
    */
   public static void main(String args[]) {
     /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
      * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
      */
@@ -532,7 +561,7 @@ public class GUI extends javax.swing.JFrame {
     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
       java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
-        //</editor-fold>
+    //</editor-fold>
 
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
@@ -541,14 +570,14 @@ public class GUI extends javax.swing.JFrame {
       }
     });
   }
-  
+
   Reciever reciever;
   Client cli;
+
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton Send;
   private javax.swing.JComboBox jComboBox1;
-  private javax.swing.JComboBox jComboBox2;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel10;
   private javax.swing.JLabel jLabel11;
@@ -582,29 +611,31 @@ public class GUI extends javax.swing.JFrame {
   private javax.swing.JSpinner jSpinner1;
   private javax.swing.JTabbedPane jTabbedPane1;
   private javax.swing.JSpinner liField;
-  private javax.swing.JSpinner liField1;
+  private javax.swing.JTextField liField1;
   private javax.swing.JSpinner modeField;
-  private javax.swing.JSpinner modeField1;
-  private javax.swing.JSpinner oTimestampField;
-  private javax.swing.JSpinner oTimestampField1;
+  private javax.swing.JTextField modeField1;
+  private javax.swing.JTextField ntpServText;
+  private javax.swing.JTextField origTimestamp;
+  private javax.swing.JTextField origTimestamp1;
   private javax.swing.JSpinner pollField;
-  private javax.swing.JSpinner pollField1;
+  private javax.swing.JTextField pollField1;
   private javax.swing.JSpinner precisionField;
   private javax.swing.JTextField precisionField1;
   private javax.swing.JSpinner rDelayField;
-  private javax.swing.JSpinner rDelayField1;
   private javax.swing.JSpinner rDispersionField;
-  private javax.swing.JSpinner rDispersionField1;
-  private javax.swing.JSpinner rIdentifierField1;
-  private javax.swing.JSpinner rTimestampField;
-  private javax.swing.JSpinner rTimestampField1;
-  private javax.swing.JSpinner reTimestampField;
-  private javax.swing.JSpinner reTimestampField1;
+  private javax.swing.JTextField recTimestamp;
+  private javax.swing.JTextField recTimestamp1;
+  private javax.swing.JTextField refIdField1;
+  private javax.swing.JTextField refTimestamp;
+  private javax.swing.JTextField refTimestamp1;
+  private javax.swing.JTextField rootDelayField1;
+  private javax.swing.JTextField rootDisField1;
+  private javax.swing.JButton sendButton1;
   private javax.swing.JSpinner stratumField;
-  private javax.swing.JSpinner stratumField1;
-  private javax.swing.JSpinner trTimestampField;
-  private javax.swing.JSpinner trTimestampField1;
+  private javax.swing.JTextField stratumField1;
+  private javax.swing.JTextField tranTimestamp;
+  private javax.swing.JTextField tranTimestamp1;
   private javax.swing.JSpinner vNoField;
-  private javax.swing.JSpinner vNoField1;
+  private javax.swing.JTextField vNoField1;
   // End of variables declaration//GEN-END:variables
 }
